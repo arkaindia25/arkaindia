@@ -105,8 +105,8 @@ header .container {
     padding: 15px 0;
 }
 
-.Logo img {
-    height: 60px;
+.logo img {
+    height: 70px;
 }
 
 nav ul {
@@ -517,4 +517,3 @@ header {
         display: none !important;
     }
 }
-
