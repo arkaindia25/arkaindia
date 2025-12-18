@@ -106,7 +106,7 @@ header .container {
 }
 
 .Logo img {
-    height: 70px;
+    height: 60px;
 }
 
 nav ul {
@@ -517,3 +517,4 @@ header {
         display: none !important;
     }
 }
+
