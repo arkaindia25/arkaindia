@@ -79,6 +79,16 @@ section:nth-child(even) {
     transition: 0.3s ease;
 }
 
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary);
+    color: #fff;
+}
 .btn:hover {
     background: #d48c00;
     transform: translateY(-2px);
@@ -147,6 +157,13 @@ nav a:hover::after {
                 url('hero-bg.jpg') center/cover no-repeat;
     text-align: center;
     color: white;
+}
+.hero-cta {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .hero p {
@@ -293,6 +310,11 @@ nav a:hover::after {
     color: #fff;
 }
 
+.cta-buttons {
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
 .cta h2, .cta p {
     color: #fff;
 }
@@ -313,7 +335,7 @@ nav a:hover::after {
 }
 
 #contact button {
-    background: #e11d48;
+    background: var(--secondary);
     border: none;
     padding: 12px;
     color: #fff;
@@ -322,7 +344,7 @@ nav a:hover::after {
 }
 
 #contact button:hover {
-    background: #be123c;
+    background: #d48c00;
 }
 
 /* ===== FOOTER ===== */
@@ -391,7 +413,7 @@ header .container {
 .floating-buttons {
     position: fixed;
     right: 20px;
-    bottom: 20px;
+    bottom: 30px;
     display: flex;
     flex-direction: column;
     gap: 12px;
