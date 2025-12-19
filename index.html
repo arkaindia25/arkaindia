@@ -55,6 +55,8 @@
 
         <div class="header-cta">
             <a href="#contact" class="btn">Raise Inquiry</a>
+            
+
         </div>
 
         <!-- MOBILE MENU ICON -->
@@ -323,9 +325,6 @@ document.getElementById('menutoggle').onclick = function () {
 <script>
   const form = document.getElementById("contactForm");
 
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-
     const formData = new FormData(form);
 
     const response = await fetch(form.action, {
@@ -339,15 +338,7 @@ document.getElementById('menutoggle').onclick = function () {
     } else {
       alert("Something went wrong. Please try again.");
     }
-  });
-</script>
-<script>
-  setTimeout(function () {
-    window.open(
-      "https://wa.me/917292060278?text=Hello%20Arka%20India,%0AI%20have%20just%20submitted%20an%20enquiry%20on%20your%20website.%0APlease%20contact%20me.%20Thank%20you.",
-      "_blank"
-    );
-  }, 2000); // opens after 2 seconds
+  ;
 </script>
 
 </body>
