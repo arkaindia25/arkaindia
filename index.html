@@ -222,8 +222,7 @@ transparent business practices, and responsive customer support.
             <p>Address: Sector 3, Ballabhgarh, Distt- Faridabad, State- Haryana, Pin-121004</p>
         </div>
 
-        <form action="https://formspree.io/f/mgowvagy" method="POST">
-            
+    <form id="contactForm" action="https://formspree.io/f/mgowvagy" method="POST">   
            <input type="text" name="name" placeholder="Your Name" required>
 <input type="email" name="email" placeholder="Email Address" required>
 <input type="tel" name="phone" placeholder="Phone Number" required>
@@ -231,8 +230,9 @@ transparent business practices, and responsive customer support.
 <textarea name="message" placeholder="Message"></textarea>
 
 <input type="hidden" name="_subject" value="New Enquiry from ArkaIndia.org">
-<input type="hidden" name="_redirect" value="https://arkaindia.org/thank-you.html">
+
 <button type="submit">Submit</button>
+<input type="hidden" name="_redirect" value="https://arkaindia.org/thank-you.html">
 
         </form>
     </div>
@@ -319,6 +319,36 @@ document.getElementById('menutoggle').onclick = function () {
    aria-label="Chat on WhatsApp">
    
 </a>
+
+<script>
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      window.location.href = "https://arkaindia.org/thank-you.html";
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+</script>
+<script>
+  setTimeout(function () {
+    window.open(
+      "https://wa.me/917292060278?text=Hello%20Arka%20India,%0AI%20have%20just%20submitted%20an%20enquiry%20on%20your%20website.%0APlease%20contact%20me.%20Thank%20you.",
+      "_blank"
+    );
+  }, 2000); // opens after 2 seconds
+</script>
 
 </body>
 </html>
