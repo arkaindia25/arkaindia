@@ -232,6 +232,7 @@ transparent business practices, and responsive customer support.
 <input type="hidden" name="_subject" value="New Enquiry from ArkaIndia.org">
 
 <button type="submit">Submit</button>
+<input type="hidden" name="_redirect" value="https://arkaindia.org/thank-you.html">
 
         </form>
     </div>
@@ -291,11 +292,16 @@ transparent business practices, and responsive customer support.
 })();
     // Online hours
     if (currentHour >= startHour && currentHour < endHour) {
-        whatsappTooltip = "Chat";    
+        whatsappTooltip = "Chat";
+        whatsappBtn.href =
+            "https://wa.me/917292060278?text=Hello%20Arka%20India,%20I%20am%20interested%20in%20your%20security%20services.%20Please%20contact%20me.";
     }
     // Offline hours
     else {
         whatsappTooltip = "Offline-Leave Message";
+        whatsappBtn.href =
+            "https://wa.me/917292060278?text=Hello%20Arka%20India,%20I%20tried%20to%20contact%20you%20outside%20business%20hours.%20Please%20call%20me%20back%20when%20available.";
+        
         // Hide call button when offline
         callBtn.style.display = "none";
     }
@@ -323,13 +329,14 @@ document.getElementById('menutoggle').onclick = function () {
       headers: { 'Accept': 'application/json' }
     });
 
-    
+    if (response.ok) {
+      window.location.href = "https://arkaindia.org/thank-you.html";
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
   });
 </script>
 
 
 </body>
-
 </html>
-
-
