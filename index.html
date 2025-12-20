@@ -28,6 +28,42 @@
 
   gtag('config', 'G-C832X6GSLC');
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Arka India",
+  "url": "https://arkaindia.org",
+  "logo": "https://arkaindia.org/logo.png",
+  "description": "Arka India is a manufacturing and e-commerce company specializing in CCTV cameras, security cables, electronics, gold & silver jewellery, and men's & kids clothing.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-7292060278",
+    "contactType": "customer service",
+    "areaServed": "IN",
+    "availableLanguage": ["English", "Hindi"]
+  },
+  "sameAs": [
+    "https://wa.me/917292060278"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Arka India",
+  "url": "https://arkaindia.org",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://arkaindia.org/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
 </head>
 
 <body>
@@ -335,6 +371,11 @@ document.getElementById('menutoggle').onclick = function () {
       alert("Something went wrong. Please try again.");
     }
   });
+</script>
+<script>
+window.open = function() {
+  console.log("Blocked auto WhatsApp");
+};
 </script>
 
 
