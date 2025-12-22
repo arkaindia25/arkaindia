@@ -346,6 +346,19 @@ nav a:hover::after {
 #contact button:hover {
     background: #d48c00;
 }
+/* ===== Blog =====*/
+.blog-page {
+  background: linear-gradient(135deg, #020b1f, #04142f);
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.blog-page h1,
+.blog-page h2,
+.blog-page h3,
+.blog-page p {
+  color: #ffffff;
+}
 
 /* ===== FOOTER ===== */
 footer {
