@@ -39,4 +39,19 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+  <loc>https://arkaindia.org/blog-cctv-vs-normal-cable.html</loc>
+  <lastmod>2025-01-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://arkaindia.org/blog-choose-cctv-system-for-factories.html</loc>
+  <lastmod>2025-01-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+
 </urlset>
