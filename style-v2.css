@@ -409,6 +409,11 @@ header .container {
     justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh;
+  }
+}
     /* ===== FLOATING WHATSAPP & CALL BUTTONS ===== */
 .floating-buttons {
     position: fixed;
@@ -560,3 +565,5 @@ header {
         display: none !important;
     }
 }
+
+
