@@ -24,7 +24,7 @@ body
 
 /* ===== COMMON ===== */
 .container {
-    width: 90%;
+    width: 80%;
     max-width: 1200px;
     margin: auto;
 }
@@ -70,7 +70,7 @@ section:nth-child(even) {
 /* ===== BUTTONS ===== */
 .btn {
     display: inline-block;
-    padding: 14px 28px;
+    padding: 12px 24px;
     background: var(--secondary);
     color: white;
     text-decoration: none;
@@ -114,6 +114,7 @@ header .container {
     justify-content: space-between;
     padding: 15px 0;
 }
+
 
 .logo img {
     height: 70px;
@@ -328,12 +329,6 @@ nav a:hover::after {
   color: #9ca3af;
   font-size: 0.85rem;
 }
-
-
-
-
-
-
 /* ===== CTA ===== */
 .cta-section {
   padding: 80px 0;
@@ -525,7 +520,7 @@ nav a:hover::after {
     nav ul.show {
         display: flex;
     }
-
+  }
     .menu-toggle {
         display: flex;
        
@@ -548,7 +543,6 @@ header .container {
 }
 
 /* === FINAL FLOATING BUTTONS  === */
-
 .floating-buttons{
     position: fixed !important;
     right: 25px !important;
@@ -570,6 +564,7 @@ header .container {
     color: #fff;
     text-decoration: none;
     box-shadow: 0 10px 25px rgba(0,0,0,.35);
+    transition: transform .2s ease;
 }
 
 .floating-buttons .whatsapp{
@@ -579,7 +574,6 @@ header .container {
 .floating-buttons .call{
     background:#e11d48;
 }
-
 /* ===== FLOATING BUTTONS WITH TOOLTIP ===== */
 .floating-buttons {
     position: fixed;
@@ -611,7 +605,8 @@ header .container {
     box-shadow: 0 14px 32px rgba(0,0,0,0.55);
 }
 
-}
+
+
 .header-inner {
     display: flex;
     align-items: center;
@@ -630,6 +625,28 @@ header {
         display: none !important;
     }
 }
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
 /* Dropdown container */
 .dropdown {
   position: relative;
@@ -642,10 +659,11 @@ header {
   top: 100%;
   left: 0;
   background: #0b1220;
-  min-width: 260px;
+  min-width: 220px;
   padding: 10px 0;
   border-radius: 6px;
   z-index: 999;
+  box-shadow: 0 15px 30px rgba(0,0,0,.35);
 }
 
 .dropdown {
@@ -671,11 +689,26 @@ header {
 .dropdown-menu li a {
   color: #fff;
   text-decoration: none;
+  padding: 10px 18px;
+  white-space: nowrap;
 }
 
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+
+.dropdown-menu li a:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.raise-inquiry-btn {
+  background: #fbbf24;
+  color: #000;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
 .trust-section {
   padding: 60px 0;
   background: #050914;
@@ -694,4 +727,3 @@ header {
   margin: auto;
   font-size: 16px;
 }
-
