@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arka India | Security in New Rays</title>
+    <meta name="description" content="Arka India provides professional security services with trained manpower, strong supervision, and reliable protection solutions.">
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="Arka India Logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="#why-us">Why Arka India</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-cta">
+            <a href="#contact" class="btn">Get Security Quote</a>
+        </div>
+    </div>
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section id="home" class="hero">
+    <div class="container">
+        <h1>Professional Security Solutions You Can Trust</h1>
+        <p>Disciplined manpower. Intelligent protection. Uncompromising safety.</p>
+
+        <div class="hero-points">
+            <span>✔ Trained & Verified Guards</span>
+            <span>✔ 24×7 Security Support</span>
+            <span>✔ Corporate & Industrial Expertise</span>
+        </div>
+
+        <div class="hero-buttons">
+            <a href="#contact" class="btn">Request Security Assessment</a>
+            <a href="tel:+91XXXXXXXXXX" class="btn btn-outline">Call Now</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+    <div class="container">
+        <h2>Who We Are</h2>
+        <p>
+            Arka India is a professionally managed security services company established in 2025.
+            We specialize in disciplined, reliable, and structured security solutions designed to
+            protect people, property, and operations.
+        </p>
+
+        <div class="about-highlights">
+            <div>ESTD. 2025</div>
+            <div>Professional Command Structure</div>
+            <div>Trusted Security Partner</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+    <div class="container">
+        <h2>Our Security Services</h2>
+
+        <div class="service-grid">
+            <div class="service-card">Manned Security Services</div>
+            <div class="service-card">Residential Security</div>
+            <div class="service-card">Commercial & Corporate Security</div>
+            <div class="service-card">Industrial & Infrastructure Security</div>
+            <div class="service-card">Event & Temporary Security</div>
+            <div class="service-card">Surveillance & Security Support</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== INDUSTRIES ===== -->
+<section id="industries">
+    <div class="container">
+        <h2>Industries We Serve</h2>
+
+        <ul class="industry-list">
+            <li>Corporate Offices</li>
+            <li>Manufacturing Units</li>
+            <li>Warehouses & Logistics</li>
+            <li>Residential Societies</li>
+            <li>Retail & Commercial Spaces</li>
+            <li>Construction Sites</li>
+            <li>Events & Public Gatherings</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ===== WHY US ===== -->
+<section id="why-us">
+    <div class="container">
+        <h2>Why Arka India</h2>
+
+        <ul class="why-list">
+            <li>Strict Recruitment & Verification</li>
+            <li>Continuous Training Programs</li>
+            <li>Strong Supervision & Control</li>
+            <li>Professional Appearance & Conduct</li>
+            <li>Quick Response Mechanism</li>
+            <li>Transparent Operations</li>
+        </ul>
+
+        <p class="trust-note">
+            We don’t compromise on security—because your safety has no margin for error.
+        </p>
+    </div>
+</section>
+
+<!-- ===== TRAINING ===== -->
+<section id="training">
+    <div class="container">
+        <h2>Our People. Our Strength.</h2>
+        <p>
+            Every Arka India security professional undergoes strict background verification,
+            structured training, and continuous performance evaluation to ensure discipline
+            and alertness at all times.
+        </p>
+    </div>
+</section>
+
+<!-- ===== MISSION & VISION ===== -->
+<section id="mission-vision">
+    <div class="container two-column">
+        <div>
+            <h3>Our Mission</h3>
+            <p>
+                To deliver strong, dependable, and intelligent security solutions through disciplined
+                manpower and professional management.
+            </p>
+        </div>
+
+        <div>
+            <h3>Our Vision</h3>
+            <p>
+                To set new benchmarks in the security industry through trust, integrity, and
+                operational excellence.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+    <div class="container">
+        <h2>Secure What Matters Most</h2>
+        <p>Partner with Arka India for reliable and professional security solutions.</p>
+        <a href="#contact" class="btn">Request a Quote</a>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+    <div class="container">
+        <h2>Get in Touch</h2>
+
+        <div class="contact-info">
+            <p><strong>Arka India</strong></p>
+            <p>Phone: +91 XXXXXXXXXX</p>
+            <p>Email: info@arkaindia.com</p>
+            <p>Address: Your Office Address</p>
+        </div>
+
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <input type="email" placeholder="Email Address">
+            <input type="text" placeholder="Service Required">
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container">
+        <p>© 2025 Arka India. All Rights Reserved.</p>
+        <p>Security in New Rays.</p>
+    </div>
+</footer>
+
+</body>
+</html>

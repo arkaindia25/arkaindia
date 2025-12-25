@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style-v2.css">
+</head>
+
+<body>
+  
+  <div id="header"></div>
+  <span class="highlight"></span>
+  <section class="industry-block">
+
+  <div class="industry-row">
+    <img src="Factory.png">
+    <div class="industry-content">
+      <h2>Factories</h2>
+      <p>
+        Arka India delivers high-performance power cables, control wiring, 
+        industrial networking and advanced surveillance solutions for 
+        manufacturing plants and production facilities. Our systems are 
+        engineered to withstand heavy loads, harsh environments and 
+        continuous operations.
+      </p>
+    </div>
+  </div>
+
+  <div class="industry-row reverse">
+    <img src="Warehouse.png">
+    <div class="industry-content">
+      <h2>Warehouses</h2>
+      <p>
+        We provide complete electrical infrastructure, lighting systems, 
+        power distribution and 24×7 CCTV security for warehouses, logistics 
+        parks and storage facilities — ensuring safety, efficiency and 
+        uninterrupted operations.
+      </p>
+    </div>
+  </div>
+
+  <div class="industry-row">
+    <img src="Enterrises.png">
+    <div class="industry-content">
+      <h2>Enterprises</h2>
+      <p>
+        From corporate offices to IT parks and commercial complexes, 
+        Arka India designs and deploys robust electrical and networking 
+        solutions that power modern enterprises with speed, security 
+        and reliability.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="container contact-grid">
+
+    <div class="contact-info">
+      <h2>Contact Arka India</h2>
+      <p>Let’s discuss your requirements and build the right solution.</p>
+
+      <ul>
+        <li><strong>📍 Address:</strong> Faridabad, Haryana, India</li>
+        <li><strong>📞 Phone:</strong> +91 72920 60278</li>
+        <li><strong>✉ Email:</strong> info@arkaindia.org</li>
+        <li><strong>🕒 Working Hours:</strong> Mon–Sat | 10:00 AM – 7:00 PM</li>
+      </ul>
+    </div>
+
+    <div class="contact-form">
+      <h3>Request a Call Back</h3>
+      <form action="#" method="post">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="text" placeholder="Company / Organization">
+        <textarea placeholder="Your Requirement"></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<div id="footer"></div>
+<script>
+  fetch('header.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer').innerHTML = data);
+</script>
+</body>
+</html>

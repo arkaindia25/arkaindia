@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style-v2.css">
+</head>
+
+<body>
+  
+  <div id="header"></div>
+  <span class="highlight"></span>
+
+
+<section class="why-hero">
+  <h1>Why Arka India</h1>
+  <p>Powering businesses with quality, safety & reliability.</p>
+</section>
+
+<section class="why-block">
+  <h2>Built on Engineering Excellence</h2>
+  <p>
+    Arka India is committed to delivering superior electrical, surveillance and networking solutions
+    designed to perform under demanding environments. Our focus on safety, compliance and
+    long-term reliability makes us a trusted partner across industries.
+  </p>
+</section>
+
+<section class="why-grid">
+
+  <div class="why-card">
+    <h3>Certified Quality</h3>
+    <p>ISI & industry-compliant products tested for performance and safety.</p>
+  </div>
+
+  <div class="why-card">
+    <h3>Fire-Safe Technology</h3>
+    <p>FR-LS & LSZH insulated cables for maximum protection.</p>
+  </div>
+
+  <div class="why-card">
+    <h3>Heavy-Duty Performance</h3>
+    <p>Engineered for continuous operations & harsh environments.</p>
+  </div>
+
+  <div class="why-card">
+    <h3>Complete Solutions</h3>
+    <p>Electrical, surveillance & networking from one trusted source.</p>
+  </div>
+
+  <div class="why-card">
+    <h3>Nationwide Supply</h3>
+    <p>Strong distribution network with reliable delivery timelines.</p>
+  </div>
+
+  <div class="why-card">
+    <h3>Expert Support</h3>
+    <p>Technical guidance & project support at every stage.</p>
+  </div>
+
+</section>
+<section class="why-stats">
+  <div><h3>10+</h3><p>Years Industry Experience</p></div>
+  <div><h3>500+</h3><p>Projects Delivered</p></div>
+  <div><h3>100+</h3><p>Enterprise Clients</p></div>
+  <div><h3>24/7</h3><p>Customer Support</p></div>
+</section>
+<section id="contact" class="contact-section">
+  <div class="container contact-grid">
+
+    <div class="contact-info">
+      <h2>Contact Arka India</h2>
+      <p>Let’s discuss your requirements and build the right solution.</p>
+
+      <ul>
+        <li><strong>📍 Address:</strong> Faridabad, Haryana, India</li>
+        <li><strong>📞 Phone:</strong> +91 72920 60278</li>
+        <li><strong>✉ Email:</strong> info@arkaindia.org</li>
+        <li><strong>🕒 Working Hours:</strong> Mon–Sat | 10:00 AM – 7:00 PM</li>
+      </ul>
+    </div>
+
+    <div class="contact-form">
+      <h3>Request a Call Back</h3>
+      <form action="#" method="post">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="text" placeholder="Company / Organization">
+        <textarea placeholder="Your Requirement"></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<div id="footer"></div>
+<script>
+  fetch('header.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer').innerHTML = data);
+</script>
+</body>
+</html>
+
+
+
+
