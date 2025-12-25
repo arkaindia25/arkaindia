@@ -1,0 +1,187 @@
+:root{
+  --primary:#0a2a66;
+  --secondary:#f4a300;
+  --dark:#020617;
+  --light:#cbd5e1;
+}
+
+/* ===== RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Poppins,Arial,sans-serif;
+  background:var(--primary);
+  color:#e5e7eb;
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+
+/* ===== COMMON ===== */
+.container{max-width:1200px;margin:auto;padding:0 20px}
+section{padding:80px 0}
+h1{font-size:48px}
+h2{font-size:34px}
+h3{font-size:22px}
+p{color:var(--light)}
+
+/* ===== HEADER ===== */
+header{
+  background:var(--dark);
+  position:sticky;top:0;z-index:1000;
+  border-bottom:1px solid #1f2933;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo img{height:90px}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:28px;
+  align-items:center;
+}
+.nav-links a{
+  color:white;
+  font-weight:500;
+}
+.raise-inquiry-btn{
+  background:#fbbf24;
+  color:black;
+  padding:10px 22px;
+  border-radius:30px;
+  font-weight:600;
+}
+.menu-toggle{display:none;font-size:28px;color:white;cursor:pointer}
+
+/* ===== HERO ===== */
+.hero{text-align:center;color:white}
+.hero p{max-width:650px;margin:20px auto}
+
+/* ===== PRODUCTS ===== */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+  margin-top:40px;
+}
+.product-card{
+  background:#020b1f;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+.product-card img{width:100%;height:190px;object-fit:cover;border-radius:10px}
+.product-desc{font-size:14px;color:#ccc;margin:10px 0}
+.product-price{color:#7CFF00;font-weight:600}
+
+/* ===== INDUSTRY ===== */
+.industry-row{
+  display:flex;
+  align-items:center;
+  gap:50px;
+  margin-bottom:100px;
+}
+.industry-row img{width:45%;border-radius:20px;box-shadow:0 25px 60px rgba(0,0,0,.7)}
+.industry-content{width:55%}
+.industry-content h2{color:#7CFF00}
+
+/* ===== WHY ===== */
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+.why-card{background:#020b1f;padding:30px;border-radius:16px}
+.why-stats{
+  display:flex;
+  justify-content:space-around;
+  text-align:center;
+}
+
+/* ===== BLOG ===== */
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+.blog-card{background:#020b1f;border-radius:16px;overflow:hidden}
+.blog-card img{width:100%;height:180px;object-fit:cover}
+
+/* ===== CONTACT ===== */
+.contact-container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+.contact-form{
+  background:#020b1f;
+  padding:40px;
+  border-radius:16px;
+  box-shadow:0 25px 60px rgba(0,0,0,.7);
+}
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  background:#06142f;
+  color:white;
+  border:none;
+  margin-bottom:15px;
+}
+
+/* ===== FLOATING BUTTONS ===== */
+.floating-buttons{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  z-index:9999;
+}
+.floating-buttons a{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;color:white;
+  box-shadow:0 8px 22px rgba(0,0,0,.4);
+}
+.floating-buttons .whatsapp{background:#25D366}
+.floating-buttons .call{background:#e11d48}
+
+/* ======================
+   RESPONSIVE SYSTEM
+====================== */
+
+/* DESKTOP */
+@media (min-width:992px){
+  .nav-links{display:flex;position:static;flex-direction:row}
+  .menu-toggle{display:none}
+}
+
+/* MOBILE */
+@media (max-width:991px){
+
+  .menu-toggle{display:block}
+
+  .nav-links{
+    position:fixed;
+    top:80px;left:0;
+    width:100%;
+    height:calc(100vh - 80px);
+    background:#020617;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    display:none;
+  }
+  .nav-links.active{display:flex}
+
+  .product-grid{grid-template-columns:1fr}
+  .industry-row{flex-direction:column;text-align:center}
+  .industry-row img,.industry-content{width:100%}
+  .contact-container{grid-template-columns:1fr}
+  .why-stats{flex-direction:column;gap:30px}
+}

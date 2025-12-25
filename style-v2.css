@@ -673,6 +673,26 @@ nav a:hover::after {
 
 
 /* ===== CONTACT ===== */
+.contact-hero{
+  text-align:center;
+  padding:120px 20px;
+  color:white;
+}
+
+.contact-hero h1{font-size:48px;}
+
+.contact-container{
+  max-width:1100px;
+  margin:80px auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.contact-info{
+  color:#ddd;
+}
 .contact-section {
   padding: 90px 0;
   background: #020814;
@@ -698,21 +718,24 @@ nav a:hover::after {
   color: #cbd5f5;
 }
 
-.contact-form {
-  background: rgba(255,255,255,0.05);
-  padding: 35px;
-  border-radius: 14px;
+.contact-form{
+  background:#020b1f;
+  padding:40px;
+  border-radius:16px;
+  box-shadow: 0 25px 60px rgba(0,0,0,.7);
 }
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  margin-bottom: 14px;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
+.contact-form input:focus,
+.contact-form textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border-radius:8px;
+  border:none;
+  background:#06142f;
+  color:white;
+  
 }
-
 .contact-form button {
   background: #ffb000;
   color: #000;
@@ -751,18 +774,53 @@ nav a:hover::after {
 }
 
 /* ===== Blog =====*/
-.blog-page {
-  background: linear-gradient(135deg, #020b1f, #04142f);
-  color: #ffffff;
-  padding: 80px 0;
+.blog-hero{
+  text-align:center;
+  padding:120px 20px;
+  color:white;
 }
 
-.blog-page h1,
-.blog-page h2,
-.blog-page h3,
-.blog-page p {
-  color: #ffffff;
+.blog-hero h1{font-size:48px;}
+
+.blog-grid{
+  max-width:1100px;
+  margin:80px auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 }
+
+.blog-card{
+  background:#020b1f;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+  color:white;
+}
+
+.blog-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.blog-card h3{padding:20px 20px 10px;}
+
+.blog-card p{padding:0 20px 20px; color:#ccc;}
+
+.read-btn{
+  display:block;
+  text-align:center;
+  background:#7CFF00;
+  color:black;
+  padding:12px;
+  margin:20px;
+  border-radius:30px;
+  font-weight:600;
+  text-decoration:none;
+}
+
 
 
 
