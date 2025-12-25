@@ -62,7 +62,7 @@ section:nth-child(even) {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -1088,6 +1088,7 @@ header .container {
 .spec-table tr:nth-child(even) {
   background: #f5f7fa;
 }
+
 
 
 
