@@ -19,6 +19,9 @@
 </head>
 
 <body>
+
+<div id="header"></div>
+
 <section class="blog-page">
 <div class="container">
 <main style="max-width:900px;margin:auto;padding:20px;line-height:1.7;">
@@ -96,6 +99,19 @@ Arka India manufactures high-quality industrial CCTV cables and accessories desi
 </main>
 </div>
 </section>
+
+<div id="footer"></div>
+
+<script>
+  fetch('header.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer').innerHTML = data);
+</script>
+
 </body>
 </html>
 

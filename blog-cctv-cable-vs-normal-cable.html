@@ -9,7 +9,7 @@
 
      <meta name="description" content="Detailed technical comparison between CCTV cables and normal electrical cables. Learn signal quality, shielding, conductor type, and why CCTV cables are essential for surveillance systems.">
 
-     <link rel="canonical" href="https://arkaindia.org/blog-cctv-cable-vs-normal-cable.html">
+     <link rel="canonical" href="https:/arkaindia.org/blog-cctv-cable-vs-normal-cable.html">
 
 
      <!-- Open Graph -->
@@ -28,6 +28,9 @@
 </head>
 
     <body>
+
+<div id="header"></div>
+     
 <section class="blog-page">
   <div class="container">
 <main style="max-width:900px;margin:auto;padding:20px;line-height:1.7;">
@@ -153,6 +156,48 @@ Arka India manufactures high-quality CCTV cables designed for industrial and com
 </main>
 </div>
 </section>
+
+<section id="contact" class="contact-section">
+  <div class="container contact-grid">
+
+    <div class="contact-info">
+      <h2>Contact Arka India</h2>
+      <p>Let’s discuss your requirements and build the right solution.</p>
+
+      <ul>
+        <li><strong>📍 Address:</strong> Faridabad, Haryana, India</li>
+        <li><strong>📞 Phone:</strong> +91 72920 60278</li>
+        <li><strong>✉ Email:</strong> info@arkaindia.org</li>
+        <li><strong>🕒 Working Hours:</strong> Mon–Sat | 10:00 AM – 7:00 PM</li>
+      </ul>
+    </div>
+
+    <div class="contact-form">
+      <h3>Request a Call Back</h3>
+      <form action="#" method="post">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="text" placeholder="Company / Organization">
+        <textarea placeholder="Your Requirement"></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<div id="footer"></div>
+<script>
+  fetch('header.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer').innerHTML = data);
+</script>
+
+
 </body>
 </html>
 
