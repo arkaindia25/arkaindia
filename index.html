@@ -328,67 +328,17 @@
 
 </head>
 
-<body>
-
+<body> 
 <!-- ===== HEADER ===== -->
-<header>
-    
-    <div class="container">
-        
-        <div class="logo">
-            <img src="logo.png" alt="logo.png">
+<div id="header"></div>
+<script>
+fetch("header.html?ver=" + Date.now())
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
 
-
-        </div>
-        <nav class="main-nav">
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-
-    <li class="dropdown">
-    <a href="products.html">Products▾</a>
-    <ul class="dropdown-menu">
-        <li><a href="/products-cctv-cables.html">CCTV & Security Cables</a></li>
-        <li><a href="/industrial-cables.html">Industrial Cables</a></li>
-        <li><a href="/products-house-wire.html">House Wires</a></li>
-        <li><a href="/products-lan-cable.html">LAN Cables</a></li>
-        <li><a href="/Jewellery.html">Jewellery</a></li>
-        <li><a href="/Mens-Wear.html">Men's wear</a></li>
-        <li><a href="/kids-wear.html">Kid's wear</a></li>
-      </ul>
-    </li>
-
-    <li><a href="industry.html">Industry</a></li>
-
-    <li><a href="why-arka.html">Why Arka India</a></li>
-
-    <li><a href="/bulk-order.html">Bulk Order</a></li>
-    <li class="dropdown">
-      <a href="blog.html">Blog▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="/blog-cctv-cable-vs-normal-cable.html">CCTV Cable vs Normal Cable</a></li>
-        <li><a href="/blog-cctv-for-factories-warehouses.html">CCTV for Factories & Warehouses</a></li>
-        <li><a href="/blog-industrial-lan-house-wire-cables.html">Industrial, LAN & House Wires</a></li>
-      </ul>
-    </li>
-
-    <li><a href="#contact">Contact</a></li>
-    
-    <a href="#contact" class="raise-inquiry-btn">Raise Inquiry</a>
-
-  </ul>
-</nav>
-
-<div class="header-cta">
-  <a href="#contact" class="btn">Raise Inquiry</a>
-</div>
-
- 
-        <!-- MOBILE MENU ICON -->
-        <div class="menu-toggle" id="menutoggle">&#9776;</div>
-
-    </div> 
-
-</header>
 
 <!-- ===== HERO SECTION ===== -->
 
@@ -653,6 +603,14 @@ electronics, security systems, jewellery, and apparel to customers across India.
         <li>Quality Certified</li>
       </ul>
     </div>
+    <div>
+    <h4>Social Media</h4>
+    <ul>
+      <li>Follow us on facebook</li>
+      <li>Follow us on twitter</li>
+      <li>follow us on insta</li>
+    </ul>
+  </div>
   </div>
 
   <div class="footer-bottom">
@@ -668,68 +626,56 @@ electronics, security systems, jewellery, and apparel to customers across India.
 </div>
 
 <script>
-(function () {
-    const startHour = 9;
-    const endHour = 19;
-
-    const now = new Date();
-    const currentHour = now.getHours();
-
-    const floatingButtons = document.getElementById('floatingButtons');
-    const callBtn = document.querySelector('.float-btn.call');
-
-    if (currentHour < startHour || currentHour >= endHour) {
-        callBtn.style.display = "none";
-    }
-})();
-    // Online hours
-    if (currentHour >= startHour && currentHour < endHour) {
-        whatsappTooltip = "Chat";
-        whatsappBtn.href =
-            "https://wa.me/917292060278?text=Hello%20Arka%20India,%20I%20am%20interested%20in%20your%20security%20services.%20Please%20contact%20me.";
-    }
-    // Offline hours
-    else {
-        whatsappTooltip = "Offline-Leave Message";
-        whatsappBtn.href =
-            "https://wa.me/917292060278?text=Hello%20Arka%20India,%20I%20tried%20to%20contact%20you%20outside%20business%20hours.%20Please%20call%20me%20back%20when%20available.";
-        
-        // Hide call button when offline
-        callBtn.style.display = "none";
-    }
-</script>
-
-<script>
-document.getElementById('menutoggle').onclick = function () {
-    document.querySelector('nav ul').classList.toggle('show');
-}
-</script>
-
-<script>
-  const form = document.getElementById("contactForm");
-
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
-      window.location.href = "https://arkaindia.org/thank-you.html";
-    } else {
-      alert("Something went wrong. Please try again.");
-    }
-  });
-</script>
-<script>
 window.open = function() {
   console.log("Blocked auto WhatsApp");
 };
+</script>
+<script>
+(function () {
+  const startHour = 9;
+  const endHour = 19;
+
+  const now = new Date();
+  const currentHour = now.getHours();
+
+  const floatingButtons = document.getElementById("floatingButtons");
+  const callBtn = document.querySelector(".float-btn.call");
+
+  if (currentHour < startHour || currentHour >= endHour) {
+    if (callBtn) callBtn.style.display = "none";
+  }
+
+  if (currentHour >= startHour && currentHour < endHour) {
+    if (window.whatsappBtn) {
+      whatsappBtn.href = "https://wa.me/917292060278?text=Hello%20Arka%20India";
+    }
+  } else {
+    if (window.whatsappBtn) {
+      whatsappBtn.href = "https://wa.me/917292060278?text=Hello%20Arka%20India%20I%20tried%20to%20contact%20you";
+    }
+    if (callBtn) callBtn.style.display = "none";
+  }
+
+  const form = document.getElementById("contactForm");
+  if (form) {
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (response.ok) {
+        window.location.href = "thank-you.html";
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    });
+  }
+})();
 </script>
 
 

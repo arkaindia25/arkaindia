@@ -1,27 +1,75 @@
 <section class="products-section">
   <h1>Our Products</h1>
 
-  <div class="products-grid">
+<div id="header"></div>
 
-    <a href="products-cctv-cables.html" class="product-card">
-      <h3>CCTV & Security Cables</h3>
-      <p>Surveillance & security cable solutions</p>
-    </a>
+<script>
+fetch("header.html?ver=" + Date.now())
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
 
-    <a href="industrial-cables.html" class="product-card">
-      <h3>Industrial Cables</h3>
-      <p>High-performance industrial cabling</p>
-    </a>
+<div class="products-grid">
 
-    <a href="products-house-wire.html" class="product-card">
-      <h3>House Wires</h3>
-      <p>Reliable residential wiring</p>
-    </a>
+   <a href="products-Electronics.html" class="product-card">
+    <h3>Electronics</h3>
+    <p>Manufacturing of all types of Lt Cables</p>
+  </a>
+  <a href="products-Electronics-cctv-cables.html" class="product-card">
+    <h3>CCTV & Security Cables</h3>
+    <p>Surveillance & security cable solutions</p>
+  </a>
 
-    <a href="products-lan-cable.html" class="product-card">
-      <h3>LAN Cables</h3>
-      <p>Networking & data transmission</p>
-    </a>
+  <a href="products-Electronics-industrial-cables.html" class="product-card">
+    <h3>Industrial Cables</h3>
+    <p>High-performance industrial cabling</p>
+  </a>
 
-  </div>
+  <a href="products-Electronics-house-wire.html" class="product-card">
+    <h3>House Wires</h3>
+    <p>Reliable residential wiring</p>
+  </a>
+
+  <a href="products-Electronics-lan-cable.html" class="product-card">
+    <h3>LAN Cables</h3>
+    <p>Networking & data transmission</p>
+  </a>
+
+
+  <a href="products-Jewellery.html" class="product-card">
+    <h3>Jewellery</h3>
+    <p>Premium Gold & Silver Jewellery</p>
+  </a>
+
+  <a href="products-Jewellery-Gold.html" class="product-card">
+    <h3>Gold Jewellery</h3>
+    <p>Certified gold ornaments & collections</p>
+  </a>
+
+  <a href="products-Jewellery-Silver.html" class="product-card">
+    <h3>Silver Jewellery</h3>
+    <p>Elegant silver jewellery & coins</p>
+  </a>
+
+  
+   <a href="products-Clothing.html" class="product-card">
+    <h3>Clothing for King’s & there Heart Beat</h3>
+    <p>Premium Stuff with wrinkle free</p>
+  </a>
+
+
+  <a href="products-Clothing-For-King.html" class="product-card">
+    <h3>King’s Clothing</h3>
+    <p>Premium men’s fashion & casual wear</p>
+  </a>
+
+  <a href="products-Clothing-For-King-Heart-beat.html" class="product-card">
+    <h3>King’s Heartbeat Clothing</h3>
+    <p>Modern apparel for everyday confidence</p>
+  </a>
+
+</div>
+
 </section>

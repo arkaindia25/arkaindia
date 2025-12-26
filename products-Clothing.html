@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clothing | Arka India</title>
+<link rel="stylesheet" href="style-v2.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<script>
+fetch("header.html?ver=" + Date.now())
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+
+
+<section class="product-hero">
+  <div class="container">
+    <h1>Clothing</h1>
+    <p>Premium apparel designed for confidence, comfort and modern lifestyle.</p>
+  </div>
+</section>
+
+<section class="product-grid">
+
+  <div class="product-card">
+    <h3>King’s Clothing</h3>
+    <p>Men’s fashion, casual wear & formal collections.</p>
+    <a href="products-Clothing-For-King.html" class="btn">Explore</a>
+  </div>
+
+  <div class="product-card">
+    <h3>King’s Heartbeat Clothing</h3>
+    <p>Modern lifestyle apparel for everyday excellence.</p>
+    <a href="products-Clothing-For-King-Heart-beat.html" class="btn">Explore</a>
+  </div>
+
+</section>
+
+<div id="footer"></div>
+<script>
+fetch("footer.html").then(r=>r.text()).then(d=>{document.getElementById("footer").innerHTML=d});
+</script>
+
+</body>
+</html>

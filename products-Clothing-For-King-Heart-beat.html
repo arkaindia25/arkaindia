@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>King’s Heart Beat Clothing | Arka India</title>
+<link rel="stylesheet" href="style-v2.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<!-- PRODUCT HERO -->
+<section class="product-hero">
+  <div class="container">
+    <h1>King’s Heart Beat Clothing</h1>
+    <p>Premium apparel designed for confidence, comfort, and everyday excellence.</p>
+  </div>
+</section>
+
+<!-- PRODUCT SECTION -->
+<section class="product-section">
+  <div class="container">
+    <section class="product-grid">
+
+      <div class="product-card">
+        <h3>Prince Casual T-Shirts</h3>
+        <ul>
+          <li>Breathable cotton fabric</li>
+          <li>Fade resistant colors</li>
+          <li>All-season comfort</li>
+        </ul>
+        <a href="contact.html" class="btn">Get Quote</a>
+      </div>
+
+      <div class="product-card">
+        <h3>Prince Formal Shirts</h3>
+        <ul>
+          <li>Tailored fit</li>
+          <li>Durable stitching</li>
+          <li>Wrinkle resistant</li>
+        </ul>
+        <a href="contact.html" class="btn">Get Quote</a>
+      </div>
+
+      <div class="product-card">
+        <h3>Casual Wear Collection</h3>
+        <ul>
+          <li>Modern designs</li>
+          <li>Comfortable wear</li>
+          <li>Long-lasting quality</li>
+        </ul>
+        <a href="contact.html" class="btn">Get Quote</a>
+      </div>
+
+    </section>
+  </div>
+</section>
+<section id="contact" class="contact-section">
+  <div class="container contact-grid">
+
+    <div class="contact-info">
+      <h2>Contact Arka India</h2>
+      <p>Let’s discuss your requirements and build the right solution.</p>
+
+      <ul>
+        <li><strong>📍 Address:</strong> Faridabad, Haryana, India</li>
+        <li><strong>📞 Phone:</strong> +91 72920 60278</li>
+        <li><strong>✉ Email:</strong> info@arkaindia.org</li>
+        <li><strong>🕒 Working Hours:</strong> Mon–Sat | 10:00 AM – 7:00 PM</li>
+      </ul>
+    </div>
+
+    <div class="contact-form">
+      <h3>Request a Call Back</h3>
+      <form action="#" method="post">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="text" placeholder="Company / Organization">
+        <textarea placeholder="Your Requirement"></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<div id="footer"></div>
+<script>
+  fetch('header.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer').innerHTML = data);
+</script>
+</body>
+</html>
