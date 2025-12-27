@@ -10,40 +10,46 @@
     <li><a href="/index.html">Home</a></li>
 
     <li class="dropdown">
-  <a href="products.html">Products▾</a>
-  <ul class="dropdown-menu">
-    <li class="dropdown">
-      <a href="products-Electronics.html">Eectronics▾</a>
-      <ul class="dropdown-menu">
+  <a href="products.html">Products</a>
 
-        <li><a href="products-Electronics-cctv-cables.html">CCTV & Security Cables</a></li>
-        <li><a href="products-Electronics-industrial-cables.html">Industrial Cables</a></li>
-        <li><a href="products-Electronics-house-wire.html">House Wires</a></li>
-        <li><a href="products-Electronics-lan-cable.html">LAN Cables</a></li>
-      </ul>
+  <ul class="dropdown-menu product-menu">
+
+    <!-- Electronics -->
+    <li class="menu-title">
+      <a href="electronics.html">Electronics</a>
     </li>
-      
-    <li class="dropdown">
-      <a href="products-Jewellery.html">Jewellery ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="products-Jewellery-Gold.html">Gold Jewellery</a></li>
-        <li><a href="products-Jewellery-Silver.html">Silver Jewellery</a></li>
-      </ul>
+    <li class="submenu"><a href="cctv-cables.html">CCTV & Security Cables</a></li>
+    <li class="submenu"><a href="industrial-cables.html">Industrial Cables</a></li>
+    <li class="submenu"><a href="house-wire.html">House Wires</a></li>
+    <li class="submenu"><a href="lan-cable.html">LAN Cables</a></li>
+
+    <li class="divider"></li>
+
+    <!-- Jewellery -->
+    <li class="menu-title">
+      <a href="jewellery.html">Jewellery</a>
     </li>
-    <li class="dropdown">
-      <a href="products-Clothing.html">Clothing▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="products-Clothing-For-King.html">King's Clothing</a></li>
-        <li><a href="products-Clothing-For-King-Heart-beat.html">King's Heartbeat Clothing</a></li>
-      </ul>
-    
+    <li class="submenu"><a href="Gold.html">Gold Jewellery</a></li>
+    <li class="submenu"><a href="Silver.html">Silver Jewellery</a></li>
+
+    <li class="divider"></li>
+
+    <!-- Clothing -->
+    <li class="menu-title">
+      <a href="clothing.html">Clothing</a>
+    </li>
+    <li class="submenu"><a href="King.html">Men’s Wear</a></li>
+    <li class="submenu"><a href="kids.html">Kids Wear</a></li>
+
   </ul>
 </li>
 
-      <li><a href="industry.html">industry</a></li>
 
-    <li><a href="why-arka.html">Why Arka India</a></li>
-    <li><a href="bulk-order.html">Bulk Order</a></li>
+  
+      <li><a href="/industry.html">industry</a></li>
+
+    <li><a href="/why-arka.html">Why Arka India</a></li>
+    <li><a href="/bulk-order.html">Bulk Order</a></li>
     <li class="dropdown">
       <a href="#blog">Blog▾</a>
       <ul class="dropdown-menu">
@@ -53,9 +59,7 @@
       </ul>
     </li>
 
-    <li><a href="#contact">Contact</a></li>
-    
-    <a href="#contact" class="raise-inquiry-btn">Raise Inquiry</a>
+    <li><a href="/contact.html">Contact</a></li>
 
   </ul>
 </nav>
@@ -71,3 +75,22 @@
     </div> 
 
 </header>
+<script>
+document.addEventListener("click", function (e) {
+
+  // Close all dropdowns
+  document.querySelectorAll(".dropdown.open").forEach(d => {
+    d.classList.remove("open");
+  });
+
+  // Check if clicked element is a dropdown toggle
+  const toggle = e.target.closest(".dropdown > a, .dropdown > span");
+
+  if (toggle) {
+    e.preventDefault();
+    const parent = toggle.parentElement;
+    parent.classList.toggle("open");
+  }
+});
+</script>
+</body>

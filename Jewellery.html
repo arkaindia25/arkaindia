@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jewellery | Arka India</title>
+<link rel="stylesheet" href="style-v.css">
+</head>
+<body>
+<div id="header"></div>
+
+<script>
+fetch("/header.html?ver=" + Date.now())
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+
+
+<section class="product-hero">
+  <div class="container">
+    <h1>Jewellery</h1>
+    <p>Premium Gold & Silver jewellery crafted with elegance and precision.</p>
+  </div>
+</section>
+
+<section class="product-grid">
+
+  <div class="product-card">
+    <h3>Gold Jewellery</h3>
+    <p>Certified gold ornaments & luxury collections.</p>
+    <a href="products-Jewellery-Gold.html" class="btn">Explore</a>
+  </div>
+
+  <div class="product-card">
+    <h3>Silver Jewellery</h3>
+    <p>Elegant silver jewellery & premium silver products.</p>
+    <a href="products-Jewellery-Silver.html" class="btn">Explore</a>
+  </div>
+
+</section>
+
+<div id="footer"></div>
+<script>
+fetch("footer.html").then(r=>r.text()).then(d=>{document.getElementById("footer").innerHTML=d});
+</script>
+
+</body>
+</html>

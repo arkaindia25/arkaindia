@@ -123,7 +123,7 @@
 </script>
 
 
-    <script type="application/ld+json">
+ <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -248,7 +248,7 @@
   ]
 }
 </script>
-    <link href="style-v2.css" rel="stylesheet">
+    <link href="style-v.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Charset & Viewport -->
 <meta charset="UTF-8">
@@ -274,7 +274,7 @@
 <meta property="og:image" content="https://arkaindia.org/logo.png">
 
 <!-- Fonts & CSS -->
-<link rel="stylesheet" href="style-v2.css">
+<link rel="stylesheet" href="style-v.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -332,7 +332,7 @@
 <!-- ===== HEADER ===== -->
 <div id="header"></div>
 <script>
-fetch("header.html?ver=" + Date.now())
+fetch("/header.html?ver=" + Date.now())
   .then(res => res.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
@@ -620,16 +620,7 @@ electronics, security systems, jewellery, and apparel to customers across India.
 
 <!-- ===== FLOATING ACTION BUTTONS ===== -->
 
-<div class="floating-buttons" id="floatingButtons">
-  <a href="https://wa.me/917292060278" class="whatsapp" id="whatsappBtn">💬</a>
-  <a href="tel:+917292060278" class="call" id="callBtn">📞</a>
-</div>
 
-<script>
-window.open = function() {
-  console.log("Blocked auto WhatsApp");
-};
-</script>
 <script>
 (function () {
   const startHour = 9;
@@ -647,7 +638,7 @@ window.open = function() {
 
   if (currentHour >= startHour && currentHour < endHour) {
     if (window.whatsappBtn) {
-      whatsappBtn.href = "https://wa.me/917292060278?text=Hello%20Arka%20India";
+      whatsappBtn.href = "https://wa.me/917292060278?text=Hello%20Arka%20India,%20I%20am%20looking%20for%20bulk%20CCTV%20and%20security%20cables.%20Please%20share%20details.";
     }
   } else {
     if (window.whatsappBtn) {
@@ -677,6 +668,43 @@ window.open = function() {
   }
 })();
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdowns = document.querySelectorAll(".dropdown > a");
+
+  dropdowns.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const parent = this.parentElement;
+
+      // Close other open dropdowns
+      document.querySelectorAll(".dropdown.open").forEach(item => {
+        if (item !== parent) {
+          item.classList.remove("open");
+        }
+      });
+
+      // Toggle current dropdown
+      parent.classList.toggle("open");
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown")) {
+      document.querySelectorAll(".dropdown.open").forEach(item => {
+        item.classList.remove("open");
+      });
+    }
+  });
+});
+</script>
+<div>
+<a href="https://wa.me/917292060278?text=Hello%20Arka%20India,%20I%20am%20looking%20for%20bulk%20CCTV%20and%20security%20cables.%20Please%20share%20details." class="whatsapp-btn">WhatsApp</a>
+  <a href="tel:+91729260278" class="call-btn">Call</a>
+</div>
 
 
 </body>
