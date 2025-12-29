@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clothing | Arka India</title>
+<link rel="stylesheet" href="style-v.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<script>
+fetch("header.html?ver=" + Date.now())
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+
+
+<section class="product-hero">
+  <div class="container">
+    <h1>Grocery</h1>
+    <p>deliveries available in local area @ best price without going market</p>
+  </div>
+</section>
+
+<section class="product-grid">
+
+  <div class="product-card">
+    <h3>Spices</h3>
+    <p>make happy to serve better flavour</p>
+    <a href="/Spices.html" class="btn">Explore</a>
+  </div>
+
+  <div class="product-card">
+    <h3>Grains</h3>
+    <p>eat healthy & fit always fresh</p>
+    <a href="Grains.html" class="btn">Explore</a>
+  </div>
+
+  <div class="product-card">
+    <h3>Dry Fruits</h3>
+    <p>Body requires protein & other sources before exhaust energy</p>
+    <a href="Dryfruits.html" class="btn">Explore</a>
+  </div> 
+
+</section>
+
+<div id="footer"></div>
+<script>
+fetch("footer.html").then(r=>r.text()).then(d=>{document.getElementById("footer").innerHTML=d});
+</script>
+
+</body>
+</html>
