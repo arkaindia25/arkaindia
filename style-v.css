@@ -153,7 +153,7 @@ nav a:hover::after {
   min-width: 280px;
   background: #0b1220;
   border: 1px solid rgba(255,255,255,0.08);
-  padding: 10px 0;
+  padding: 0;
   z-index: 999;
 }
 
@@ -1202,3 +1202,92 @@ background: #f5f7fa;
 .thumbs img:hover {
     border-color: #f5b800;
 }
+
+/* ===== RESET ===== */
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hide all submenus */
+.submenu,
+.submenu ul {
+    display: none;
+    position: absolute;
+    background: #0b1e36;
+    min-width: 220px;
+    z-index: 9999;
+}
+
+/* First dropdown (Products) */
+.nav-links > li {
+    position: relative;
+}
+
+.nav-links > li > ul.submenu {
+    top: 100%;
+    left: 0;
+}
+
+/* Show Products menu on hover */
+.nav-links > li:hover > ul.submenu {
+    display: block;
+}
+
+/* Main category list */
+.submenu > li {
+    position: relative;
+}
+
+/* Right side submenus */
+.submenu > li > ul {
+    top: 0;
+    left: 100%;
+}
+
+/* Show right submenu only when its parent is hovered */
+.submenu > li:hover > ul {
+    display: block;
+}
+
+/* ===== MENU LOOK ===== */
+.submenu {
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+.submenu > li > a {
+    display: block;
+    padding: 12px 16px;
+    color: #ffd700;
+    text-decoration: none;
+    white-space: nowrap;
+    background: linear-gradient(180deg,#0d2748,#081a30);
+}
+
+/* Hover highlight */
+.submenu > li > a:hover {
+    background: #1b3b6d;
+    color: #fff;
+}
+
+/* Right panel links */
+.submenu > li > ul > li > a {
+    padding: 12px 18px;
+    color: #fff;
+    background: linear-gradient(180deg,#081a30,#061425);
+}
+
+/* Right panel hover */
+.submenu > li > ul > li > a:hover {
+    background: #102c52;
+}
+
+/* Arrow icon ▸ */
+.submenu > li > a::after {
+    content: "▸";
+    float: right;
+    color: gold;
+}
+

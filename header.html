@@ -1,108 +1,69 @@
-<header class="site-header">
+<!DOCTYPE html>
+<body>
+  <header class="site-header">
   <div class="container header-wrap">
-        
-        <div class="logo">
-            <img src="logo.png" alt="logo.png">
-        </div>
-    
-       <ul class="nav-links">
-        
-    <li><a href="/index.html">Home</a></li>
 
-    <li class="dropdown">
-  <a href="products.html">Products</a>
+    <div class="logo">
+      <img src="logo.png" alt="Arka India">
+    </div>
 
-  <ul class="dropdown-menu product-menu">
+    <ul class="nav-links">
 
-    <!-- Electronics -->
-    <li class="menu-title">
-      <a href="electronics.html">Electronics</a>
-    </li>
-    <li class="submenu"><a href="cctv-cables.html">CCTV & Security Cables</a></li>
-    <li class="submenu"><a href="industrial-cables.html">Industrial Cables</a></li>
-    <li class="submenu"><a href="house-wire.html">House Wires</a></li>
-    <li class="submenu"><a href="lan-cable.html">LAN Cables</a></li>
+      <li><a href="index.html">Home</a></li>
 
-    <li class="divider"></li>
+      <!-- PRODUCTS -->
+       <li><a href="products.html">Products</a>
+            <ul class="submenu">
+              <li><a href="/Electronics.html">Electronic</a>
+              <ul class="submenu">
+                <li><a href="/cctv-cables.html">CCTV Cables</a></li>
+                <li><a href="/industry.html">Industry Cable</a></li>
+                <li><a href="/lan-cable.html">Lan Cable</a></li>
+                <li><a href="/house-wire.html">House Wire</a></li>
+              </ul>
+             </li>
+             <li><a href="/Jewellery.html">Jewellery</a> 
+               <ul class="submenu">
+                 <li><a href="/Gold.html">Gold Jewellery</a></li>
+                 <li><a href="/Silver.html">Silver Jewellery</a></li>
+               </ul>
+             </li>
+             <li><a href="/Clothing.html">Clothing</a>
+             <ul class="submenu">
+              <li><a href="/King.html">Men's Wear</a></li>
+              <li><a href="/King-Heart-beat.html">Kid's Wear</a></li>
+             </ul>
+            </li>
+            <li><a href="/grocery.html">Grocery</a>
+            <ul class="submenu">
+              <li><a href="/Spices.html">Spices</a></li> 
+              <li><a href="/Grains.html">Grains</a></li>
+              <li><a href="/Dryfruits.html">Dry Fruits</a></li>
+              </ul>
+            </li>
+            </ul>
 
-    <!-- Jewellery -->
-    <li class="menu-title">
-      <a href="jewellery.html">Jewellery</a>
-    </li>
-    <li class="submenu"><a href="Gold.html">Gold Jewellery</a></li>
-    <li class="submenu"><a href="Silver.html">Silver Jewellery</a></li>
+      <li><a href="industry.html">Industry</a></li>
+      <li><a href="why-arka.html">Why Arka India</a></li>
+      <li><a href="bulk-order.html">Bulk Order</a></li>
 
-    <li class="divider"></li>
+      <!-- BLOG -->
+      <li class="dropdown">
+        <a href="#">Blog ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="blog-cctv-cable-vs-normal-cable.html">CCTV Cable vs Normal Cable</a></li>
+          <li><a href="blog-cctv-for-factories-warehouses.html">CCTV for Factories & Warehouses</a></li>
+          <li><a href="blog-industrial-lan-house-wire-cables.html">Industrial, LAN & House Wires</a></li>
+        </ul>
+      </li>
 
-    <!-- Clothing -->
-    <li class="menu-title">
-      <a href="clothing.html">Clothing</a>
-    </li>
-    <li class="submenu"><a href="King.html">Men’s Wear</a></li>
-    <li class="submenu"><a href="kids.html">Kids Wear</a></li>
+      <li><a href="contact.html">Contact</a></li>
+       
 
-    <li class="divider"></li>
-
-    <!-- Grocery -->
-    <li class="menu-title">
-      <a href="grocery.html">Grocery</a>
-    </li>
-    <li class="submenu"><a href="Spices.html">Spices</a></li>
-    <li class="submenu"><a href="Grains.html">Grains</a></li>
-    <li class="submenu"><a href="Drifruits.html">Dry Fruits</a></li>
-
-  </ul>
-</li>
-
-
-  
-      <li><a href="/industry.html">industry</a></li>
-
-    <li><a href="/why-arka.html">Why Arka India</a></li>
-    <li><a href="/bulk-order.html">Bulk Order</a></li>
-    <li class="dropdown">
-      <a href="#blog">Blog▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="/blog-cctv-cable-vs-normal-cable.html">CCTV Cable vs Normal Cable</a></li>
-        <li><a href="/blog-cctv-for-factories-warehouses.html">CCTV for Factories & Warehouses</a></li>
-        <li><a href="/blog-industrial-lan-house-wire-cables.html">Industrial, LAN & House Wires</a></li>
-      </ul>
-    </li>
-
-    <li><a href="/contact.html">Contact</a></li>
-
-  </ul>
-</nav>
-
-<div class="header-cta">
-  <a href="#contact" class="btn">Raise Inquiry</a>
-</div>
-
- 
-        <!-- MOBILE MENU ICON -->
-        <div class="menu-toggle" id="menutoggle">&#9776;</div>
-
-    </div> 
-
+    <div class="menu-toggle" id="menutoggle">&#9776;</div>
+    </ul>
+    </div>
 </header>
-<script>
-document.addEventListener("click", function (e) {
-
-  // Close all dropdowns
-  document.querySelectorAll(".dropdown.open").forEach(d => {
-    d.classList.remove("open");
-  });
-
-  // Check if clicked element is a dropdown toggle
-  const toggle = e.target.closest(".dropdown > a, .dropdown > span");
-
-  if (toggle) {
-    e.preventDefault();
-    const parent = toggle.parentElement;
-    parent.classList.toggle("open");
-  }
-});
-</script>
 
 
 </body>
