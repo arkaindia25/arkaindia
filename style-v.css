@@ -1291,3 +1291,141 @@ background: #f5f7fa;
     color: gold;
 }
 
+.cart-title {
+  text-align:center;
+  color:white;
+  margin:40px 0;
+}
+
+.cart-container {
+  width:80%;
+  margin:auto;
+  background:#0b2344;
+  border-radius:8px;
+  padding:20px;
+}
+
+.cart-item {
+  display:grid;
+  grid-template-columns: 3fr 1fr 2fr 1fr;
+  align-items:center;
+  padding:15px;
+  border-bottom:1px solid rgba(255,255,255,0.2);
+  color:white;
+}
+
+.cart-qty button {
+  background:#ffcc00;
+  border:none;
+  padding:5px 10px;
+  cursor:pointer;
+}
+
+.cart-summary {
+  width:80%;
+  margin:20px auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:white;
+  font-size:20px;
+}
+
+.checkout-btn {
+  background:#ffcc00;
+  padding:12px 30px;
+  text-decoration:none;
+  color:black;
+  font-weight:bold;
+  border-radius:5px;
+}
+.checkout-title {
+  text-align:center;
+  color:white;
+  margin:40px 0;
+}
+
+.checkout-wrapper {
+  width:85%;
+  margin:auto;
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  gap:30px;
+}
+
+.checkout-left, .checkout-right {
+  background:#0b2344;
+  padding:25px;
+  border-radius:8px;
+  color:white;
+}
+
+.checkout-left input,
+.checkout-left textarea,
+.checkout-left select {
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:none;
+  border-radius:5px;
+}
+
+.checkout-left textarea {
+  height:80px;
+}
+
+.summary-item, .summary-total {
+  display:flex;
+  justify-content:space-between;
+  padding:10px 0;
+}
+
+.summary-total {
+  font-size:20px;
+  font-weight:bold;
+}
+
+.place-order {
+  width:100%;
+  padding:15px;
+  background:#ffcc00;
+  border:none;
+  margin-top:20px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.cart-link {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  padding: 8px 15px;
+}
+
+.cart-link i {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.cart-count {
+  background: #ffcc00;
+  color: black;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
+.total{
+  margin-top: 20px;
+  padding: 15px 20px;
+  border-top: 2px solid #f7c600;
+  font-size: 22px;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  
+}
+

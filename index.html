@@ -694,5 +694,29 @@ electronics, security systems, jewellery, and apparel to customers across India.
 <a href="https://wa.me/917292060278?text=Hello%20Arka%20India,%20I%20am%20looking%20for%20bulk%20CCTV%20and%20security%20cables.%20Please%20share%20details." class="whatsapp-btn">WhatsApp</a>
   <a href="tel:+91729260278" class="call-btn">Call</a>
 </div>
+<script>
+function getCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+function setCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function updateCartCount() {
+  const cart = getCart();
+  let totalQty = 0;
+
+  cart.forEach(item => {
+    totalQty += item.qty;
+  });
+
+  const badge = document.querySelector(".cart-count");
+  if (badge) badge.textContent = totalQty;
+}
+
+updateCartCount();
+</script>
+
 </body>
 </html>

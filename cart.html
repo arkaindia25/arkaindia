@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="style-v.css">
+<img src="logo.png" alt="Arka India Logo" class="footer-logo"> 
+<title>Cart</title>
+<style>
+body{background:#0b2a55;color:#fff;font-family:Arial}
+.cart-container{max-width:800px;margin:50px auto}
+.cart-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;padding:10px;border-bottom:1px solid #fff}
+.qty-btn{background:#f7c600;border:none;padding:5px 10px;font-weight:bold}
+.total{font-size:22px;text-align:right;margin-top:20px}
+</style>
+</head>
+<body>
+
+<h2 align="center">Your Cart</h2>
+
+<div class="cart-container">
+  <div id="cartList"></div>
+
+  <div class="total">
+    Total ₹ <span id="grandTotal">0</span>
+  </div>
+</div>
+
+<br>
+<center><a href="checkout.html"><button style="padding:12px 30px;background:#f7c600;border:none">Checkout</button></a></center>
+
+
+<script>
+function updateQty(index, change){
+  let cart = JSON.parse(localStorage.getItem("arkaCart")) || [];
+
+  cart[index].qty += change;
+
+  if(cart[index].qty <= 0){
+    cart.splice(index,1);   // remove item if qty = 0
+  }
+
+  localStorage.setItem("arkaCart", JSON.stringify(cart));
+  loadCart();   // re-render cart
+}
+</script>
+
+<script>
+function loadCart(){
+  let cart = JSON.parse(localStorage.getItem("arkaCart")) || [];
+  let html = "";
+  let total = 0;
+
+  cart.forEach((item, i) => {
+    let itemTotal = item.price * item.qty;
+    total += itemTotal;
+
+    html += `
+<div class="cart-row">
+  <div>${item.name}</div>
+  <div>₹${item.price}</div>
+
+  <div class="qty">
+     <button onclick="updateQty(${i}, -1)">−</button>
+     <span>${item.qty}</span>
+     <button onclick="updateQty(${i}, 1)">+</button>
+  </div>
+
+  <div>₹${itemTotal}</div>
+</div>
+`;
+
+  });
+
+  document.getElementById("cartList").innerHTML = html;
+  document.getElementById("grandTotal").innerText = total;
+}
+
+function updateQty(index, change) {
+  let cart = JSON.parse(localStorage.getItem("arkaCart")) || [];
+
+  cart[index].qty += change;
+
+  if (cart[index].qty <= 0) {
+    cart.splice(index, 1);   // remove item
+  }
+
+  localStorage.setItem("arkaCart", JSON.stringify(cart));
+  loadCart();
+}
+
+
+function updateCartCounter(){
+  let cart = JSON.parse(localStorage.getItem("arkaCart")) || [];
+  let count = cart.reduce((s,i)=>s+i.qty,0);
+  document.querySelectorAll(".cart-count").forEach(el=>el.innerText=count);
+}
+
+loadCart();
+</script>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <img src="logo.png" alt="Arka India Logo" class="footer-logo">
+      <p>Trusted manufacturer of CCTV cables, industrial security cables, electronics, jewellery & apparel across India.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Business</h4>
+      <ul>
+        <li>Bulk Manufacturing</li>
+        <li>Pan-India Supply</li>
+        <li>Factory-Grade Products</li>
+        <li>Quality Certified</li>
+      </ul>
+    </div>
+    <div>
+    <h4>Social Media</h4>
+    <ul>
+      <li><a href="Facebook">Follow us on facebook></a></li>
+      <li><a href="Twitter">Follow us on twitter></a></li>
+      <li><a href="Insta">Follow us on insta></a></li>
+    </ul>
+  </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2023 Arka India. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>

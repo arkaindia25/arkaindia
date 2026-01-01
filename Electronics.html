@@ -59,6 +59,56 @@ fetch("footer.html").then(res => res.text()).then(data => {
   document.getElementById("footer").innerHTML = data;
 });
 </script>
+<script>
+function getCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+function setCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function updateCartCount() {
+  const cart = getCart();
+  let totalQty = 0;
+
+  cart.forEach(item => {
+    totalQty += item.qty;
+  });
+
+  const badge = document.querySelector(".cart-count");
+  if (badge) badge.textContent = totalQty;
+}
+
+updateCartCount();
+</script>
+<script>
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem("arkaCart")) || [];
+
+  let found = cart.find(item => item.name === name);
+  if (found) {
+    found.qty++;
+  } else {
+    cart.push({ name, price, qty: 1 });
+  }
+
+  localStorage.setItem("arkaCart", JSON.stringify(cart));
+  updateCartCounter();
+  alert(name + " added to cart");
+}
+
+function updateCartCounter() {
+  let cart = JSON.parse(localStorage.getItem("arkaCart")) || [];
+  let count = cart.reduce((sum, i) => sum + i.qty, 0);
+  document.querySelectorAll(".cart-count").forEach(el => {
+    el.innerText = count;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", updateCartCounter);
+</script>
+
 
 </body>
 </html>

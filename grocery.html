@@ -51,6 +51,29 @@ fetch("header.html?ver=" + Date.now())
 <script>
 fetch("footer.html").then(r=>r.text()).then(d=>{document.getElementById("footer").innerHTML=d});
 </script>
+<script>
+function getCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+function setCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function updateCartCount() {
+  const cart = getCart();
+  let totalQty = 0;
+
+  cart.forEach(item => {
+    totalQty += item.qty;
+  });
+
+  const badge = document.querySelector(".cart-count");
+  if (badge) badge.textContent = totalQty;
+}
+
+updateCartCount();
+</script>
 
 </body>
 </html>

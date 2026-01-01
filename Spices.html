@@ -149,6 +149,31 @@
 
   </div>
 
+  <!-- Kali MMirch -->
+  <div class="product-card">
+    <!-- MAIN SLIDER -->
+  <div class="product-image">
+    <img src="/blog/Kali Mirch.png" class="main-img" id="img-1">
+</div>
+
+  <div class="thumbs">
+    <img src="/blog/Kali Mirch.png" onclick="changeImage(this)">
+</div>
+    <h3>Kali Mirch</h3>
+    <ul>
+      <li>Brand- Arka India</li>
+      <li>Item Form- Whole</li>
+      <li>Variety- Black pepper</li>
+      <li>Quantity- 100grm, 500grm, 1Kg</li>
+      <li>Used By- 30-12-2026</li>
+    </ul>
+    <strong>₹110.00/100grm</strong>
+    
+<button onclick="addToCart('Black Pepper Whole 100grm', 25)">Add to Cart</button>
+
+
+  </div>
+
 </div>
 </section>
 
@@ -214,6 +239,56 @@ function changeImage(el){
     document.querySelector(".product-image img").src = el.src;
 }
 </script>
+<script>
+function getCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+function setCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function updateCartCount() {
+  const cart = getCart();
+  let totalQty = 0;
+
+  cart.forEach(item => {
+    totalQty += item.qty;
+  });
+
+  const badge = document.querySelector(".cart-count");
+  if (badge) badge.textContent = totalQty;
+}
+
+updateCartCount();
+</script>
+<script>
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem("arkaCart")) || [];
+
+  let found = cart.find(item => item.name === name);
+  if (found) {
+    found.qty++;
+  } else {
+    cart.push({ name, price, qty: 1 });
+  }
+
+  localStorage.setItem("arkaCart", JSON.stringify(cart));
+  updateCartCounter();
+  alert(name + " added to cart");
+}
+
+function updateCartCounter() {
+  let cart = JSON.parse(localStorage.getItem("arkaCart")) || [];
+  let count = cart.reduce((sum, i) => sum + i.qty, 0);
+  document.querySelectorAll(".cart-count").forEach(el => {
+    el.innerText = count;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", updateCartCounter);
+</script>
+
 
 
 
