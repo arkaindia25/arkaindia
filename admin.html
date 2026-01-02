@@ -1,45 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <title>Arka Admin Panel</title>
-<div class="logo">
-      <img src="logo.png" alt="Arka India">
-    </div>
-
-    
-  <!-- Everything you already have (search, orders, buttons) stays here -->
-</div>
-<div id="loginBox" style="
-  max-width:400px;
-  margin:100px auto;
-  background:white;
-  padding:30px;
-  text-align:center;
-  border-radius:10px;
-  box-shadow:0 0 10px rgba(0,0,0,0.2);
-">
-
-
-
-  <h3>🔐 Arka Admin Login</h3>
-  <input id="adminPass" type="password" placeholder="Enter Admin PIN" style="padding:10px;width:80%;">
-  <br><br>
-  <button onclick="login()" style="padding:10px 20px;">Login</button>
-</div>
-
-<div id="adminPanel" style="display:none;">
+<title>Arka Admin Panel</title>
 
 <style>
+    #invoice{
+  width:800px;
+  margin:30px auto;
+  background:white;
+  padding:40px;
+  display:flex;
+  box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.header {
+  display:flex;
+  align-items: center;
+  gap: 20px;
+}
+.logo {
+  width: 120px;
+}
+.header h1{
+  margin:0;
+  color: #0b7a6b;
+}
+.header p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Invoice Meta */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* Table */
+table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:25px;
+}
+th{
+  background:#0b7a6b;
+  color:white;
+  padding:10px;
+}
+td{
+  border-bottom:1px solid #ccc;
+  padding:10px;
+}
+
+/* Total */
+.total{
+  text-align:right;
+  font-size:18px;
+  margin-top:20px;
+}
+
+/* Footer */
+.footer{
+  margin-top: 40px;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  border-top:1px solid #ccc;
+  padding-top:10px;
+}
+
 body{
   font-family:Arial;
-  background:#f4f6f9;
+  background:#82aae6;
 }
 h2{
   text-align:center;
 }
 .order-box{
-  background:#fff;
+  background:#f86a6a;
   padding:15px;
   margin:15px auto;
   max-width:700px;
@@ -54,22 +96,105 @@ button{
 select{
   padding:6px;
 }
+.dash-box{
+  background:rgb(236, 179, 179);
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 0 8px rgba(0,0,0,0.1);
+}
+.dash-box h3{
+  font-size:28px;
+  margin:0;
+  color:#2c3e50;
+}
+.dash-box p{
+  margin:5px 0 0;
+  color:#777;
+}
 </style>
 </head>
 
 <body>
 
+<!-- LOGIN -->
+<div id="loginBox" style="
+  max-width:400px;
+  margin:100px auto;
+  background:rgb(3, 172, 172);
+  padding:30px;
+  text-align:center;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.2);
+">
+  <h3>🔐 Arka Admin Login</h3>
+  <input id="adminPass" type="password" placeholder="Enter Admin PIN" style="padding:10px;width:80%;">
+  <br><br>
+  <button onclick="login()" style="padding:10px 20px;">Login</button>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel" style="display:none;">
+
 <h2>📦 Arka Orders Admin</h2>
+
+<div id="dashboard" style="
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  margin:20px;
+">
+  <div class="dash-box">
+    <h3 id="totalOrders">0</h3>
+    <p>Total Orders</p>
+  </div>
+
+  <div class="dash-box">
+    <h3 id="totalSales">₹0</h3>
+    <p>Total Sales</p>
+  </div>
+
+  <div class="dash-box">
+    <h3 id="inDelivery">0</h3>
+    <p>In Delivery</p>
+  </div>
+
+  <div class="dash-box">
+    <h3 id="delivered">0</h3>
+    <p>Delivered</p>
+  </div>
+
+  <div class="dash-box">
+  <h3 id="monthlySales">₹0</h3>
+  <p>This Month</p>
+</div>
+
+<div class="dash-box">
+  <h3 id="todaySales">₹0</h3>
+  <p>Today</p>
+</div>
+
+<div class="dash-box">
+  <h3 id="yesterdaySales">₹0</h3>
+  <p>Yesterday</p>
+</div>
+
+
+  <canvas id="salesChart" width="800" height="120" style="
+  background:rgb(240, 157, 157);
+  margin:30px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+"></canvas>
+
+</div>
+
 <div style="text-align:center; margin-bottom:20px;">
   <input id="searchOrder" placeholder="Enter Order ID" style="padding:10px; width:300px;">
   <button onclick="searchOrder()" style="padding:10px;">Search</button>
   <button onclick="renderOrders()" style="padding:10px;">Show All</button>
 </div>
 
-
-<div id="orders"></div>
-
-<script src="admin.js"></script>
 <div style="text-align:center; margin-bottom:20px;">
   <select id="statusFilter" onchange="filterStatus()" style="padding:10px; width:200px;">
     <option value="">All Status</option>
@@ -80,15 +205,71 @@ select{
   </select>
 </div>
 
+<div id="orders"></div>
+
 <button onclick="exportCSV()" style="
   padding:10px 15px;
   background:#2ecc71;
   border:none;
   color:white;
   cursor:pointer;
-  margin-left:10px;">
+  margin:20px;">
   ⬇ Export Orders
 </button>
+
+<div id="invoice">
+  <div class="header">
+    <img src="Arka Logo.png" class="logo">
+    <div>
+      <h1>Arka India</h1>
+      <p>Premium Spices & Food Products</p>
+      <p>www.arkaindia.com | +91 72920 60278</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="meta">
+    <div>
+      <b>Invoice No:</b> <span id="invNo"></span><br>
+      <b>Order ID:</b> <span id="orderId"></span><br>
+      <b>Date:</b> <span id="date"></span><br>
+      <b>Status:</b> <span id="status"></span>
+    </div>
+
+    <div>
+      <b>Customer:</b> <span id="customer"></span><br>
+      <b>City:</b> <span id="city"></span>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody id="items"></tbody>
+  </table>
+
+  <div class="total">
+    <b>Grand Total: <span id="grandTotal"></span></b>
+  </div>
+
+  <div class="footer">
+    Thank you for shopping with Arka India ❤️  
+    This is a computer generated invoice.
+  </div>
+</div>
+
+</div>
+
+<script src="admin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 
 </body>
