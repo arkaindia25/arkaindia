@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Track Order - Arka India</title>
+<link rel="stylesheet" href="style-v2.css">
+<style>
+body{
+    background:#f4f6f9;
+    font-family:Arial;
+}
+.track-box{
+    width:420px;
+    background:#fff;
+    padding:25px;
+    margin:40px auto;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+.status{
+    margin-top:15px;
+}
+.step{
+    padding:10px;
+    margin:8px 0;
+    border-radius:6px;
+    background:#eee;
+}
+.step.done{
+    background:#d4f7d4;
+    color:#0a7b0a;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div id="trackBox" class="track-box">
+  <p>Order ID: <span id="orderId"></span></p>
+  <p>Name: <span id="custName"></span></p>
+  <p>Amount: <span id="amount"></span></p>
+
+  <h4>Items</h4>
+  <div id="orderItems"></div>
+
+  <div class="step" id="Ordered">Ordered</div>
+  <div class="step" id="Dispatched">Dispatched</div>
+  <div class="step" id="Out for Delivery">Out for Delivery</div>
+  <div class="step" id="Delivered">Delivered</div>
+</div>
+
+<button id="sendInvoiceBtn" style="
+  margin-top:15px;
+  padding:12px;
+  width:100%;
+  background:#25D366;
+  color:white;
+  border:none;
+  font-size:16px;
+  cursor:pointer;">
+📲 Send Invoice on WhatsApp
+</button>
+
+<div id="searchBox" style="max-width:400px;margin:40px auto;text-align:center;">
+  <h3>Track Your Order</h3>
+  <input id="searchOrderId" placeholder="Enter Order ID" style="padding:10px;width:80%;">
+  <button onclick="searchOrder()" style="padding:10px;">Track</button>
+</div>
+
+<script src="track.js"></script>
+
+</body>
+</html>

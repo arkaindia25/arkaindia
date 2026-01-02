@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Arka Admin Panel</title>
+<div class="logo">
+      <img src="logo.png" alt="Arka India">
+    </div>
+
+    
+  <!-- Everything you already have (search, orders, buttons) stays here -->
+</div>
+<div id="loginBox" style="
+  max-width:400px;
+  margin:100px auto;
+  background:white;
+  padding:30px;
+  text-align:center;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.2);
+">
+
+
+
+  <h3>🔐 Arka Admin Login</h3>
+  <input id="adminPass" type="password" placeholder="Enter Admin PIN" style="padding:10px;width:80%;">
+  <br><br>
+  <button onclick="login()" style="padding:10px 20px;">Login</button>
+</div>
+
+<div id="adminPanel" style="display:none;">
+
+<style>
+body{
+  font-family:Arial;
+  background:#f4f6f9;
+}
+h2{
+  text-align:center;
+}
+.order-box{
+  background:#fff;
+  padding:15px;
+  margin:15px auto;
+  max-width:700px;
+  border-radius:8px;
+  box-shadow:0 0 5px rgba(0,0,0,0.1);
+}
+button{
+  padding:8px 12px;
+  margin-top:10px;
+  cursor:pointer;
+}
+select{
+  padding:6px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>📦 Arka Orders Admin</h2>
+<div style="text-align:center; margin-bottom:20px;">
+  <input id="searchOrder" placeholder="Enter Order ID" style="padding:10px; width:300px;">
+  <button onclick="searchOrder()" style="padding:10px;">Search</button>
+  <button onclick="renderOrders()" style="padding:10px;">Show All</button>
+</div>
+
+
+<div id="orders"></div>
+
+<script src="admin.js"></script>
+<div style="text-align:center; margin-bottom:20px;">
+  <select id="statusFilter" onchange="filterStatus()" style="padding:10px; width:200px;">
+    <option value="">All Status</option>
+    <option>Ordered</option>
+    <option>Dispatched</option>
+    <option>Out for Delivery</option>
+    <option>Delivered</option>
+  </select>
+</div>
+
+<button onclick="exportCSV()" style="
+  padding:10px 15px;
+  background:#2ecc71;
+  border:none;
+  color:white;
+  cursor:pointer;
+  margin-left:10px;">
+  ⬇ Export Orders
+</button>
+
+
+</body>
+</html>

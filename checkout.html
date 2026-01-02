@@ -70,12 +70,9 @@ button{
   <h3 style="margin-top:30px;">Delivery Details</h3>
 
 <input id="custName" type="text" placeholder="Full Name" required>
-
 <input id="custMobile" type="text" placeholder="Mobile Number" required>
-
-<input id="custEmail" type="text" placeholder="Email">
-
-<textarea id="custAddress" placeholder="Delivery Address"></textarea>
+<input id="custEmail" type="email" placeholder="Email" required>
+<input id="custAddress" placeholder="Delivery Address" required>
 
 <select id="custCity">
   <option value="">Select City</option>
@@ -201,6 +198,8 @@ Thank you for shopping with Arka India 🙏
 
   return invoice;
 }
+</script>
+<script>
 document.getElementById("placeOrderBtn").addEventListener("click", function () {
 
   let cart = JSON.parse(localStorage.getItem("arkaCart")) || [];
@@ -211,14 +210,13 @@ document.getElementById("placeOrderBtn").addEventListener("click", function () {
   }
 
   let customer = {
-  name: document.getElementById("custName").value.trim(),
-  mobile: document.getElementById("custMobile").value.trim(),
-  email: document.getElementById("custEmail").value.trim(),
-  address: document.getElementById("custAddress").value.trim(),
-  city: document.getElementById("custCity").value,
-  payment: document.getElementById("paymentMethod").value
-};
-
+    name: document.getElementById("custName").value.trim(),
+    mobile: document.getElementById("custMobile").value.trim(),
+    email: document.getElementById("custEmail").value.trim(),
+    address: document.getElementById("custAddress").value.trim(),
+    city: document.getElementById("custCity").value,
+    payment: document.getElementById("paymentMethod").value
+  };
 
   if (!customer.name || !customer.mobile || !customer.city) {
     alert("Please fill all required fields");
@@ -227,18 +225,26 @@ document.getElementById("placeOrderBtn").addEventListener("click", function () {
 
   let total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
-  let invoiceText = generateInvoice(cart, customer, total);
+  let orderId = "ARKA" + Date.now();
 
-  let whatsappUrl = "https://wa.me/917292060278?text=" + encodeURIComponent(invoiceText);
+  let order = {
+    orderId,
+    customer,
+    items: cart,
+    total,
+    status: "Ordered",
+    date: new Date().toLocaleString()
+  };
+
+  let orders = JSON.parse(localStorage.getItem("arkaOrders")) || [];
+  orders.push(order);
+  localStorage.setItem("arkaOrders", JSON.stringify(orders));
 
   localStorage.removeItem("arkaCart");
 
-  window.open(whatsappUrl, "_blank");
-
-  window.location.href = "thank-you.html";
+  window.location.href = "track.html?order=" + orderId;
 });
-
 </script>
-
+ 
 </body>
 </html>

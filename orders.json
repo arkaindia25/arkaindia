@@ -1,0 +1,12 @@
+[
+  {
+    "orderId": "ARKA1023",
+    "name": "Amit Kumar",
+    "mobile": "9876543210",
+    "city": "Faridabad",
+    "items": "Rice 5kg, Atta 10kg",
+    "total": 17012,
+    "status": "Ordered",
+    "date": "2026-01-01"
+  }
+]

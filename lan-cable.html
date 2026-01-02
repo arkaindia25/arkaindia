@@ -1,41 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>LAN Cables | Arka India</title>
-  <link rel="stylesheet" href="style-v.css">
+<meta charset="UTF-8">
+<title>Lan Cable |Arka India|</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="style-v.css">
 </head>
-<body>
 
-<div id="header"></div>
+<body >
+  
+  <div id="header"></div>
 
-
-<!-- PRODUCT HERO -->
+  <!-- PRODUCT HERO -->
 <section class="product-hero">
   <div class="container">
-  <h1>LAN Cables</h1>
-  <p>High-speed networking cables for reliable data transmission.</p>
+  <h1>We are providing all Types of Security Cable</h1>
+  <p>Secure your home with new Rays</p>
   </div>
 </section>
 <!-- PRODUCT SECTION -->
 <section class="product-section">
   <div class="container">
 
-    <!-- PRODUCTS GRID -->
-     <section class="product-grid">
+ <!-- PRODUCTS GRID -->
+<section class="product-grid">
+
+<!-- Cat6 UTP 24AWG -->
   <div class="product-card">
-    <img src="../images/lan.jpg" alt="Cat6 LAN Cable">
-    <h3>Cat6 LAN Cable</h3>
-    <p>High-speed Ethernet cable for modern networks.</p>
+    <!-- MAIN SLIDER -->
+  <div class="product-image">
+    <img src="/Screenshot 2025-08-04 151935.png" class="main-img" id="img-1">
+    <img src="/CAT 6 UTP 24AWG Design.png" class="main-img" id="img-1">
+
+</div>
+
+<div class="thumbs">
+    <img src="/Screenshot 2025-08-04 151935.png" onclick="changeImage(this)">
+    <img src="/CAT 6 UTP 24AWG Design.png" onclick="changeImage(this)">
+
+</div>
+    <h3>CAT6 UTP 24AWG</h3>
+    <ul>
+      <li>Brand- UN Link</li>
+      <li>Item Form- Cable</li>
+      <li>Variety- CAT6 Cable</li>
+      <li>Available- 100mtr, 305mtr</li>
+      <li>Long Life</li>
+      <strong>₹7100.00/305mtr</strong>
+    </ul>
+    
+    <a href="/UN Link UTP Data Sheet.pdf" class="btn">View Details</a>
+<button onclick="addToCart('Cat6 UTP 24AWG', 7100)">Add to Cart</button>
   </div>
 
+    <!-- CAT6 UTP 23AWG -->
   <div class="product-card">
-    <img src="../images/lan.jpg" alt="Outdoor LAN Cable">
-    <h3>Outdoor LAN Cable</h3>
-    <p>Weather-resistant cable for external installations.</p>
-  </div>
+<div class="product-image">
+    <img src="/CAT 6 UTP 24AWG Design.png" class="main-img" id="img-1">
+    </div>
+
+<div class="thumbs">
+    <img src="/CAT 6 UTP 24AWG Design.png" onclick="changeImage(this)">
+
 </div>
-     </section>
+    <h3>CAT6 UTP 23AWG</h3>
+    <ul>
+      <li>Brand- UN Link></li>
+      <li>Item Form- Cable</li>
+      <li>Variety- UTP</li>
+      <li>Available- 100mtr, 305mtr</li>
+      <li>Long Life</li>
+    <strong>₹8500.00/305mtr</strong>
+    </ul>
+    <a href="/UN Link UTP Data Sheet.pdf" class="btn">View Details</a>
+<button onclick="addToCart('CAT6 UTP 23AWG', 8500)">Add to Cart</button>
+  </div>
+
+  <!-- Cat6 SFTP 24AWG -->
+  <div class="product-card">
+    <!-- MAIN SLIDER -->
+  <div class="product-image">
+    <img src="/Screenshot 2025-08-04 151935.png" class="main-img" id="img-1">
+    <img src="/SFTP.jpg" class="main-img" id="img-1">
+
+</div>
+
+<div class="thumbs">
+    <img src="/Screenshot 2025-08-04 151935.png" onclick="changeImage(this)">
+    <img src="/SFTP.jpg" onclick="changeImage(this)">
+
+</div>
+    <h3>CAT6 SFTP 24AWG</h3>
+    <ul>
+      <li>Brand- UN Link</li>
+      <li>Item Form- Cable</li>
+      <li>Variety- CAT6 Cable</li>
+      <li>Available- 100mtr, 305mtr</li>
+      <li>Long Life</li>
+      <strong>₹11500.00/305mtr</strong>
+    </ul>
+    
+    <a href="/UN Link SFTP Data Sheet.pdf" class="btn">View Details</a>
+<button onclick="addToCart('Cat6 SFTP 24AWG', 11500)">Add to Cart</button>
+  </div>
+
+
+  </div>
 </section>
 
 <section id="contact" class="contact-section">
@@ -78,6 +148,28 @@
     .then(res => res.text())
     .then(data => document.getElementById('footer').innerHTML = data);
 </script>
+
+<script>
+  const thumbsSwiper = new Swiper(".product-slider-thumbs", {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+  });
+
+  const mainSwiper = new Swiper(".product-slider-main", {
+    spaceBetween: 10,
+    thumbs: {
+      swiper: thumbsSwiper,
+    },
+  });
+</script>
+
+
+<script>
+function changeImage(el){
+    document.querySelector(".product-image img").src = el.src;
+}
+</script>
 <script>
 function getCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
@@ -103,23 +195,34 @@ updateCartCount();
 </script>
 <script>
 function addToCart(name, price) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cart = JSON.parse(localStorage.getItem("arkaCart")) || [];
 
-  const found = cart.find(item => item.name === name);
-
+  let found = cart.find(item => item.name === name);
   if (found) {
-    found.qty += 1;
+    found.qty++;
   } else {
     cart.push({ name, price, qty: 1 });
   }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount();
+  localStorage.setItem("arkaCart", JSON.stringify(cart));
+  updateCartCounter();
   alert(name + " added to cart");
 }
+
+function updateCartCounter() {
+  let cart = JSON.parse(localStorage.getItem("arkaCart")) || [];
+  let count = cart.reduce((sum, i) => sum + i.qty, 0);
+  document.querySelectorAll(".cart-count").forEach(el => {
+    el.innerText = count;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", updateCartCounter);
 </script>
+
 
 
 
 </body>
 </html>
+
