@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin:0;
+    background:#f4f4f4;
+}
+.header, .footer, .slider, .topbar {
+    display:none !important;
+}
+iframe {
+    width:100%;
+    height:100vh;
+    border:none;
+}
+</style>
+</head>
+
+<body>
+
+<iframe id="appFrame"></iframe>
+
+<script>
+let page = localStorage.getItem("appPage") || "spices.html";
+document.getElementById("appFrame").src = page;
+
+window.addEventListener("message", function(e){
+    if(e.data.startsWith("page:")){
+        let p = e.data.replace("page:","");
+        localStorage.setItem("appPage", p);
+        document.getElementById("appFrame").src = p;
+    }
+});
+</script>
+
+</body>
+</html>
