@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Silver Jewellery | Arka India</title>
+<link rel="stylesheet" href="style-v.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<!-- PRODUCT HERO -->
+<section class="product-hero">
+  <div class="container">
+    <h1>Silver Jewellery</h1>
+    <p>Premium Silver jewellery crafted with precision, elegance, and enduring quality.</p>
+  </div>
+</section>
+
+<!-- PRODUCT SECTION -->
+<section class="product-section">
+  <div class="container">
+    <section class="product-grid">
+
+      <div class="product-card">
+        <h3>Silver Rings</h3>
+        <ul>
+          <li>Certified purity</li>
+          <li>Elegant craftsmanship</li>
+          <li>Ideal for weddings & occasions</li>
+        </ul>
+        <a href="contact.html" class="btn">Get Quote</a>
+      </div>
+
+      <div class="product-card">
+        <h3>Silver Bracelet Collection</h3>
+        <ul>
+          <li>Traditional & modern designs</li>
+          <li>High polish finish</li>
+          <li>Custom sizes available</li>
+        </ul>
+        <a href="contact.html" class="btn">Get Quote</a>
+      </div>
+
+      <div class="product-card">
+        <h3>Silver Coins</h3>
+        <ul>
+          <li>Lightweight & luxury options</li>
+          <li>Durable setting</li>
+          <li>Custom engraving supported</li>
+        </ul>
+        <a href="contact.html" class="btn">Get Quote</a>
+      </div>
+
+      <div class="product-card">
+        <h3>Silver Decorative Items</h3>
+        <ul>
+          <li>Lightweight & luxury options</li>
+          <li>Durable setting</li>
+          <li>Custom engraving supported</li>
+        </ul>
+        <a href="contact.html" class="btn">Get Quote</a>
+      </div>
+
+
+    </section>
+  </div>
+</section>
+<section id="contact" class="contact-section">
+  <div class="container contact-grid">
+
+    <div class="contact-info">
+      <h2>Contact Arka India</h2>
+      <p>Let’s discuss your requirements and build the right solution.</p>
+
+      <ul>
+        <li><strong>📍 Address:</strong> Faridabad, Haryana, India</li>
+        <li><strong>📞 Phone:</strong> +91 72920 60278</li>
+        <li><strong>✉ Email:</strong> info@arkaindia.org</li>
+        <li><strong>🕒 Working Hours:</strong> Mon–Sat | 10:00 AM – 7:00 PM</li>
+      </ul>
+    </div>
+
+    <div class="contact-form">
+      <h3>Request a Call Back</h3>
+      <form action="#" method="post">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="text" placeholder="Company / Organization">
+        <textarea placeholder="Your Requirement"></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<div id="footer"></div>
+<script>
+  fetch('header.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer').innerHTML = data);
+</script>
+<script>
+function getCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+function setCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function updateCartCount() {
+  const cart = getCart();
+  let totalQty = 0;
+
+  cart.forEach(item => {
+    totalQty += item.qty;
+  });
+
+  const badge = document.querySelector(".cart-count");
+  if (badge) badge.textContent = totalQty;
+}
+
+updateCartCount();
+</script>
+
+
+</body>
+</html>

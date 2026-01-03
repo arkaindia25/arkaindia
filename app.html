@@ -21,7 +21,14 @@ iframe {
 
 <body>
 
-<iframe id="appFrame"></iframe>
+    <script>
+if (!localStorage.getItem("arkaUser")) {
+    window.location.href = "login.html";
+}
+</script>
+
+<iframe id="appFrame" src="grocery.html"></iframe>
+
 
 <script>
 let page = localStorage.getItem("appPage") || "grocery.html";
