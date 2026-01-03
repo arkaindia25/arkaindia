@@ -25,13 +25,13 @@ iframe {
 
 <script>
 let page = localStorage.getItem("appPage") || "grocery.html";
-document.getElementById("appFrame").src = "/" + page;
+document.getElementById("appFrame").src = page;
 
 window.addEventListener("message", function(e){
     if(e.data.startsWith("page:")){
         let p = e.data.replace("page:","");
         localStorage.setItem("appPage", p);
-        document.getElementById("appFrame").src = "/" +p;
+        document.getElementById("appFrame").src = p;
     }
 });
 </script>
