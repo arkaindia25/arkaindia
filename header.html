@@ -9,10 +9,12 @@
 
     <ul class="nav-links">
 
-      <li><a href="index.html">Home</a></li>
+      <li><a href="#" onclick="parent.postMessage('page:index.html','*')">Home</a></li>
+
 
       <!-- PRODUCTS -->
-       <li><a href="products.html">Products▾</a>
+       <li><a href="#" onclick="parent.postMessage('page:products.html','*')">Products ▾</a>
+
             <ul class="submenu">
               <li><a href="#" onclick="parent.postMessage('page:electronics.html','*')">Electronics</a>
 
@@ -29,32 +31,34 @@
                  <li><a href="#" onclick="parent.postMessage('page:silver.html','*')">Silver Jewellery</a></li>
                </ul>
              </li>
-             <li><a href="#" onclick="parent.postMessage('page:clothing.html','*')">Clothing</a>
-             <ul class="submenu">
-              <li><a href="#" onclick="parent.postMessage('page:king.html','*')">Men's Wear</a></li>
-              <li><a href="#" onclick="parent.postMessage('page:king-Heart-beat.html','*')">Kid's Wear</a></li>
-             </ul>
-            </li>
-            <li><a href="#" onclick="parent.postMessage('page:grocery.html','*')">Grocery</a>
-            <ul class="submenu">
-              <li><a href="#" onclick="parent.postMessage('spices.html','*')">Spices</a></li> 
-              <li><a href="#" onclick="parent.postMessage('page:grains.html','*')">Grains</a></li>
-              <li><a href="#" onclick="parent.postMessage('page:dryfruits.html','*')">Dry Fruits</a></li>
-              </ul>
-            </li>
-            </ul>
+             <li><a href="#" onclick="parent.postMessage('page:clothing.html','*')">Clothing</a></li>
 
-      <li><a href="industry.html">Industry</a></li>
-      <li><a href="why-arka.html">Why Arka India</a></li>
-      <li><a href="bulk-order.html">Bulk Order</a></li>
+<ul class="submenu">
+  <li><a href="#" onclick="parent.postMessage('page:king.html','*')">Men's Wear</a></li>
+  <li><a href="#" onclick="parent.postMessage('page:king-heart-beat.html','*')">Kid's Wear</a></li>
+</ul>
+
+<li><a href="#" onclick="parent.postMessage('page:grocery.html','*')">Grocery</a></li>
+
+<ul class="submenu">
+  <li><a href="#" onclick="parent.postMessage('page:spices.html','*')">Spices</a></li>
+  <li><a href="#" onclick="parent.postMessage('page:grains.html','*')">Grains</a></li>
+  <li><a href="#" onclick="parent.postMessage('page:dryfruits.html','*')">Dry Fruits</a></li>
+</ul>
+
+
+      <li><a href="#" onclick="parent.postMessage('page:industry.html','*')">Industry</a></li>
+<li><a href="#" onclick="parent.postMessage('page:why-arka.html','*')">Why Arka India</a></li>
+<li><a href="#" onclick="parent.postMessage('page:bulk-order.html','*')">Bulk Order</a></li>
+
 
       <!-- BLOG -->
       <li class="dropdown">
         <a href="#">Blog ▾</a>
         <ul class="dropdown-menu">
-          <li><a href="blog-cctv-cable-vs-normal-cable.html">CCTV Cable vs Normal Cable</a></li>
-          <li><a href="blog-cctv-for-factories-warehouses.html">CCTV for Factories & Warehouses</a></li>
-          <li><a href="blog-industrial-lan-house-wire-cables.html">Industrial, LAN & House Wires</a></li>
+          <li><a href="#" onclick="parent.postMessage('page:blog-cctv-cable-vs-normal-cable.html','*')">CCTV Cable vs Normal Cable</a></li>
+          <li><a href="#" onclick="parent.postMessage('page:blog-cctv-for-factories-warehouses.html','*')">CCTV for Factories & Warehouses</a></li>
+          <li><a href="#" onclick="parent.postMessage('page:blog-industrial-lan-house-wire-cables.html','*')">Industrial, LAN & House Wires</a></li>
         </ul>
       </li>
 
@@ -68,7 +72,7 @@
   </a>
 </li>
 
-<li><a href="#" onclick="parent.postMessage('page:track.html','*')"></a>Track Order</a></li>
+<li><a href="#" onclick="parent.postMessage('page:track.html','*')">Track Order</a></li>
 
 
     <div class="menu-toggle" id="menutoggle">&#9776;</div>
