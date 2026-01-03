@@ -339,7 +339,7 @@ if(navigator.userAgent.includes("Android")){
 <!-- ===== HEADER ===== -->
 <div id="header"></div>
 <script>
-fetch("/header.html?ver=" + Date.now())
+fetch("header.html?ver=" + Date.now())
   .then(res => res.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
