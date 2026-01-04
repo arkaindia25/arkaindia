@@ -25,7 +25,7 @@ if (!order) {
   document.getElementById("orderItems").innerHTML = itemsHtml;
 
   // Status progress
-  const steps = ["Ordered", "Dispatched", "OutforDelivery", "Delivered"];
+  const steps = ["Ordered", "Dispatched", "Out for Delivery", "Delivered"];
   steps.forEach(step => {
     if (steps.indexOf(step) <= steps.indexOf(order.status)) {
       document.getElementById(step).classList.add("done");

@@ -164,7 +164,7 @@ function deleteOrder(orderId) {
   renderOrders();
 }
 function exportCSV() {
-  let csv = "OrderID,Customer,Mobile,City,Total,Status,Date\n";
+  let csv = "Order ID,Customer,Mobile,City,Total,Status,Date\n";
 
   orders.forEach(o => {
     csv += `${o.orderId},${o.customer.name},${o.customer.mobile},${o.customer.city},${o.total},${o.status},${o.date}\n`;
@@ -280,7 +280,7 @@ function downloadInvoice(orderId) {
     doc.setFontSize(18);
     doc.text("Arka India", 40, 20);
     doc.setFontSize(11);
-    doc.text("Premium Products", 40, 28);
+    doc.text("Premium Spices & Food Products", 40, 28);
 
     doc.setTextColor(0, 0, 0);
 
@@ -355,4 +355,5 @@ document.getElementById("items").innerHTML = rows;
 document.getElementById("grandTotal").innerText = "Rs. " + order.total;
 document.getElementById("invoice").style.display = "none";
 document.getElementById("invNo").innerText = "INV-" + order.id.slice(-6);
+
 
