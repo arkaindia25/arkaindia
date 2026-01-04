@@ -1,40 +1,53 @@
-// Read order id from URL
+function getOrders() {
+  return JSON.parse(localStorage.getItem("arkaOrders")) || [];
+}
+
+// Read from URL
 const params = new URLSearchParams(window.location.search);
-const orderId = params.get("order");
+let urlOrderId = params.get("order");
 
-// Load all orders
-let orders = JSON.parse(localStorage.getItem("arkaOrders")) || [];
+// If URL has order id, load it
+if (urlOrderId) {
+  showOrder(urlOrderId);
+}
 
-// Find this order
-let order = orders.find(o => o.orderId === orderId);
+function searchOrder() {
+  const input = document.getElementById("searchOrderId").value.trim();
+  showOrder(input);
+}
 
-if (!order) {
-  document.getElementById("trackBox").innerHTML = "<h3 style='color:red'>❌ Order not found</h3>";
-} else {
+function showOrder(orderId) {
+  const orders = getOrders();
+  const order = orders.find(o => o.orderId === orderId);
 
-  // Fill basic details
+  if (!order) {
+    document.getElementById("trackBox").innerHTML =
+      "<h3 style='color:red'>❌ Order not found</h3>";
+    return;
+  }
+
   document.getElementById("orderId").innerText = order.orderId;
   document.getElementById("custName").innerText = order.customer.name;
   document.getElementById("amount").innerText = "₹" + order.total;
 
-  // Show items
   let itemsHtml = "";
   order.items.forEach(i => {
     itemsHtml += `<div>${i.name} × ${i.qty} = ₹${i.price * i.qty}</div>`;
   });
   document.getElementById("orderItems").innerHTML = itemsHtml;
 
-  // Status progress
-  const steps = ["Ordered", "Dispatched", "Out for Delivery", "Delivered"];
+  ["Ordered","Dispatched","Out for Delivery","Delivered"].forEach(step=>{
+    document.getElementById(step).classList.remove("done");
+  });
+
+  const steps = ["Ordered","Dispatched","Out for Delivery","Delivered"];
   steps.forEach(step => {
     if (steps.indexOf(step) <= steps.indexOf(order.status)) {
       document.getElementById(step).classList.add("done");
     }
   });
 
-  // WhatsApp invoice
   document.getElementById("sendInvoiceBtn").onclick = function () {
-
     let invoice = `🧾 *ARKA INDIA*
 Order ID: ${order.orderId}
 
@@ -42,7 +55,6 @@ Customer: ${order.customer.name}
 Mobile: ${order.customer.mobile}
 City: ${order.customer.city}
 
-----------------
 Items:
 `;
 
@@ -51,14 +63,12 @@ Items:
     });
 
     invoice += `
-----------------
 Total: ₹${order.total}
 Status: ${order.status}
+Thank you for shopping with Arka India`;
 
-Thank you for shopping with Arka India 🙏`;
-
-    let mobile = order.customer.mobile.replace(/\D/g, "");
+    let mobile = order.customer.mobile.replace(/\D/g,"");
     let url = "https://wa.me/917292060278" + mobile + "?text=" + encodeURIComponent(invoice);
-    window.open(url, "_blank");
+    window.open(url,"_blank");
   };
 }
