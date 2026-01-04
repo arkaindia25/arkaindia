@@ -697,11 +697,11 @@ alert("Something went wrong. Please try again.");
 </div>
 <script>
 function getCart() {
-  return JSON.parse(localStorage.getItem("arkacart")) || [];
+  return JSON.parse(localStorage.getItem("arkaCart")) || [];
 }
 
 function setCart(cart) {
-  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("arkaCart", JSON.stringify(cart));
 }
 
 function updateCartCount() {
