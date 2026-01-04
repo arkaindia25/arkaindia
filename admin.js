@@ -356,4 +356,3 @@ document.getElementById("grandTotal").innerText = "Rs. " + order.total;
 document.getElementById("invoice").style.display = "none";
 document.getElementById("invNo").innerText = "INV-" + order.id.slice(-6);
 
-

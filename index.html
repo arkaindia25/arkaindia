@@ -257,7 +257,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- Charset & Viewport -->
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1200">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Title (ONLY ONE) -->
 <title>Electronics, CCTV & Security Cable Manufacturer in India | Arka India</title>
@@ -702,11 +702,11 @@ alert("Something went wrong. Please try again.");
 </div>
 <script>
 function getCart() {
-  return JSON.parse(localStorage.getItem("arkaCart")) || [];
+  return JSON.parse(localStorage.getItem("cart")) || [];
 }
 
 function setCart(cart) {
-  localStorage.setItem("arkaCart", JSON.stringify(cart));
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 function updateCartCount() {
