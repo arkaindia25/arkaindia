@@ -1,109 +1,79 @@
+<!DOCTYPE html>
+<body>
 <header class="site-header">
-  <div class="container header-wrap">
-        
-        <div class="logo">
-            <img src="logo.png" alt="logo.png">
-        </div>
-    
-       <ul class="nav-links">
-        
-    <li><a href="/index.html">Home</a></li>
+<div class="container header-wrap">
 
-    <li class="dropdown">
-  <a href="#">Products</a>
-
-  <ul class="dropdown-menu product-menu">
-
-    <!-- Electronics -->
-    <li class="submenu">
-      <a href="electronics.html">Electronics</a>
-    <ul>
-    <li><a href="cctv-cables.html">CCTV & Security Cables</a></li>
-    <li><a href="industrial-cables.html">Industrial Cables</a></li>
-    <li><a href="house-wire.html">House Wires</a></li>
-    <li><a href="lan-cable.html">LAN Cables</a></li>
-    </ul>
-    </li>
-
-    <!-- Jewellery -->
-    <li class="submenu">
-      <a href="jewellery.html">Jewellery</a>
-    <ul>
-    <li><a href="gold.html">Gold Jewellery</a></li>
-    <li><a href="silver.html">Silver Jewellery</a></li>
-    </ul>
-    </li>
-
-    <!-- Clothing -->
-    <li class="submenu">
-      <a href="clothing.html">Clothing</a>
-    <ul>
-    <li><a href="king.html">Men’s Wear</a></li>
-    <li><a href="king-Heart-beat.html">Kids Wear</a></li>
-    </ul>
-    </li>
-
-    <!-- Grocery -->
-    <li class="submenu">
-      <a href="grocery.html">Grocery</a>
-    <ul>
-    <li><a href="spices.html">Spices</a></li>
-    <li><a href="grains.html">Grains</a></li>
-    <li><a href="drifruits.html">Dry Fruits</a></li>
-    </ul>
-    </li>
-  </ul>
-</li>
-
-
-  
-      <li><a href="/industry.html">industry</a></li>
-
-    <li><a href="/why-arka.html">Why Arka India</a></li>
-    <li><a href="/bulk-order.html">Bulk Order</a></li>
-    <li class="dropdown">
-      <a href="#blog">Blog▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="/blog-cctv-cable-vs-normal-cable.html">CCTV Cable vs Normal Cable</a></li>
-        <li><a href="/blog-cctv-for-factories-warehouses.html">CCTV for Factories & Warehouses</a></li>
-        <li><a href="/blog-industrial-lan-house-wire-cables.html">Industrial, LAN & House Wires</a></li>
-      </ul>
-    </li>
-
-    <li><a href="/contact.html">Contact</a></li>
-
-  </ul>
-</nav>
-
-<div class="header-cta">
-  <a href="#contact" class="btn">Raise Inquiry</a>
+<div class="logo">
+<img src="logo.png" alt="Arka India">
 </div>
 
- 
-        <!-- MOBILE MENU ICON -->
-        <div class="menu-toggle" id="menutoggle">&#9776;</div>
+<ul class="nav-links">
 
-    </div> 
+<li><a href="index.html">Home</a></li>
 
+<!-- PRODUCTS -->
+<li><a href="#">Products▾</a>
+<ul class="submenu">
+<li><a href="/electronics.html">Electronic</a>
+<ul class="submenu">
+<li><a href="/cctv-cables.html">CCTV Cables</a></li>
+<li><a href="/industry.html">Industry Cable</a></li>
+<li><a href="/lan-cable.html">Lan Cable</a></li>
+<li><a href="/house-wire.html">House Wire</a></li>
+</ul>
+</li>
+<li><a href="/jewellery.html">Jewellery</a> 
+<ul class="submenu">
+<li><a href="/gold.html">Gold Jewellery</a></li>
+<li><a href="/silver.html">Silver Jewellery</a></li>
+</ul>
+</li>
+<li><a href="/clothing.html">Clothing</a>
+<ul class="submenu">
+<li><a href="/king.html">Men's Wear</a></li>
+<li><a href="/king-Heart-beat.html">Kid's Wear</a></li>
+</ul>
+</li>
+<li><a href="/grocery.html">Grocery</a>
+<ul class="submenu">
+<li><a href="/spices.html">Spices</a></li> 
+<li><a href="/grains.html">Grains</a></li>
+<li><a href="/dryfruits.html">Dry Fruits</a></li>
+</ul>
+</li>
+</ul>
+
+<li><a href="industry.html">Industry</a></li>
+<li><a href="why-arka.html">Why Arka India</a></li>
+<li><a href="bulk-order.html">Bulk Order</a></li>
+
+<!-- BLOG -->
+<li class="dropdown">
+<a href="#">Blog ▾</a>
+<ul class="dropdown-menu">
+<li><a href="blog-cctv-cable-vs-normal-cable.html">CCTV Cable vs Normal Cable</a></li>
+<li><a href="blog-cctv-for-factories-warehouses.html">CCTV for Factories & Warehouses</a></li>
+<li><a href="blog-industrial-lan-house-wire-cables.html">Industrial, LAN & House Wires</a></li>
+</ul>
+</li>
+
+<li><a href="contact.html">Contact</a></li>
+
+
+
+<li>
+<a href="/cart.html" class="cart-link">
+🛒 Cart <span class="cart-count">0</span>
+</a>
+</li>
+
+<li><a href="/track.html">Track Order</a></li>
+
+
+<div class="menu-toggle" id="menutoggle">&#9776;</div>
+</ul>
+</div>
 </header>
-<script>
-document.addEventListener("click", function (e) {
-
-  // Close all dropdowns
-  document.querySelectorAll(".dropdown.open").forEach(d => {
-    d.classList.remove("open");
-  });
-
-  // Check if clicked element is a dropdown toggle
-  const toggle = e.target.closest(".dropdown > a, .dropdown > span");
-
-  if (toggle) {
-    e.preventDefault();
-    const parent = toggle.parentElement;
-    parent.classList.toggle("open");
-  }
-});
-</script>
 
 
 </body>
