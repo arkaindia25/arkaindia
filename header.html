@@ -1,87 +1,108 @@
-<!DOCTYPE html>
-<body>
-  <header class="site-header">
+<header class="site-header">
   <div class="container header-wrap">
+        
+        <div class="logo">
+            <img src="logo.png" alt="logo.png">
+        </div>
+    
+       <ul class="nav-links">
+        
+    <li><a href="/index.html">Home</a></li>
 
-    <div class="logo">
-      <img src="logo.png" alt="Arka India">
-    </div>
+    <li class="dropdown">
+  <a href="products.html">Products</a>
 
-    <ul class="nav-links">
+  <ul class="dropdown-menu product-menu">
 
-      <li><a href="index.html" onclick="parent.postMessage('page:index','*')">Home</a></li>
+    <!-- Electronics -->
+    <li class="menu-title">
+      <a href="electronics.html">Electronics</a>
+    </li>
+    <li class="submenu"><a href="cctv-cables.html">CCTV & Security Cables</a></li>
+    <li class="submenu"><a href="industrial-cables.html">Industrial Cables</a></li>
+    <li class="submenu"><a href="house-wire.html">House Wires</a></li>
+    <li class="submenu"><a href="lan-cable.html">LAN Cables</a></li>
 
+    <li class="divider"></li>
 
-      <!-- PRODUCTS -->
-       <li><a href="#" onclick="parent.postMessage('page:products','*')">Products▾</a>
+    <!-- Jewellery -->
+    <li class="menu-title">
+      <a href="jewellery.html">Jewellery</a>
+    </li>
+    <li class="submenu"><a href="Gold.html">Gold Jewellery</a></li>
+    <li class="submenu"><a href="Silver.html">Silver Jewellery</a></li>
 
-            <ul class="submenu">
-              <li><a href="electronics.html" onclick="parent.postMessage('page:electronics','*')">Electronics</a>
+    <li class="divider"></li>
 
-              <ul class="submenu">
-                <li><a href="cctv-cables.html" onclick="parent.postMessage('page:cctv-cables','*')">CCTV Cables</a></li>
-                <li><a href="industry.html" onclick="parent.postMessage('page:industrial-cables','*')">Industry Cable</a></li>
-                <li><a href="lan-cable.html" onclick="parent.postMessage('page:lan-cable','*')">Lan Cable</a></li>
-                <li><a href="house-wire.html" onclick="parent.postMessage('page:house-wire','*')">House Wire</a></li>
-              </ul>
-             </li>
-             <li><a href="jewellery.html" onclick="parent.postMessage('page:jewellery','*')">Jewellery</a> 
-               <ul class="submenu">
-                 <li><a href="gold.html" onclick="parent.postMessage('page:gold','*')">Gold Jewellery</a></li>
-                 <li><a href="silver.html" onclick="parent.postMessage('page:silver','*')">Silver Jewellery</a></li>
-               </ul>
-             </li>
-             <li><a href="clothing.html" onclick="parent.postMessage('page:clothing','*')">Clothing</a>
-<ul class="submenu">
-  <li><a href="king.html" onclick="parent.postMessage('page:king','*')">Men's Wear</a></li>
-  <li><a href="king-Heart-beat.html" onclick="parent.postMessage('page:king-heart-beat','*')">Kid's Wear</a></li>
-</ul>
-</li>      
+    <!-- Clothing -->
+    <li class="menu-title">
+      <a href="clothing.html">Clothing</a>
+    </li>
+    <li class="submenu"><a href="King.html">Men’s Wear</a></li>
+    <li class="submenu"><a href="kids.html">Kids Wear</a></li>
 
-<li><a href="grocery.html" onclick="parent.postMessage('page:grocery','*')">Grocery</a>
-<ul class="submenu">
-  <li><a href="spices.html" onclick="parent.postMessage('page:spices','*')">Spices</a></li>
-  <li><a href="grains.html" onclick="parent.postMessage('page:grains','*')">Grains</a></li>
-  <li><a href="dryfruits.html" onclick="parent.postMessage('page:dryfruits','*')">Dry Fruits</a></li>
-</ul>
-</li>
-            </ul>
-       </li>
+    <li class="divider"></li>
 
+    <!-- Grocery -->
+    <li class="menu-title">
+      <a href="grocery.html">Grocery</a>
+    </li>
+    <li class="submenu"><a href="Spices.html">Spices</a></li>
+    <li class="submenu"><a href="Grains.html">Grains</a></li>
+    <li class="submenu"><a href="Drifruits.html">Dry Fruits</a></li>
 
-      <li><a href="industry.html" onclick="parent.postMessage('page:industry','*')">Industry</a></li>
-<li><a href="why-arka.html" onclick="parent.postMessage('page:why-arka','*')">Why Arka India</a></li>
-<li><a href="bulk-order.html" onclick="parent.postMessage('page:bulk-order','*')">Bulk Order</a></li>
-
-
-      <!-- BLOG -->
-      <li class="dropdown">
-        <a href="#" onclick="parent.postMessage('page:blog','*')">Blog▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="blog-cctv-cable-vs-normal-cable.html" onclick="parent.postMessage('page:blog-cctv-cable-vs-normal-cable','*')">CCTV Cable vs Normal Cable</a></li>
-          <li><a href="blog-cctv-for-factories-warehouses.html" onclick="parent.postMessage('page:blog-cctv-for-factories-warehouses','*')">CCTV for Factories & Warehouses</a></li>
-          <li><a href="blog-industrial-Lan-House-wire-cables.html" onclick="parent.postMessage('page:blog-industrial-lan-house-wire-cables','*')">Industrial, LAN & House Wires</a></li>
-        </ul>
-      </li>
-
-      <li><a href="contact.html" onclick="parent.postMessage('page:contact','*')">Contact</a></li>
-
-     
-
-       <li>
-  <a href="cart.html" onclick="parent.postMessage('page:cart','*')">
-    🛒 Cart <span class="cart-count">0</span>
-  </a>
+  </ul>
 </li>
 
-<li><a href="track.html" onclick="parent.postMessage('page:track','*')">Track Order</a></li>
 
+  
+      <li><a href="/industry.html">industry</a></li>
 
-    <div class="menu-toggle" id="menutoggle">&#9776;</div>
-    </ul>
-    </div>
+    <li><a href="/why-arka.html">Why Arka India</a></li>
+    <li><a href="/bulk-order.html">Bulk Order</a></li>
+    <li class="dropdown">
+      <a href="#blog">Blog▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="/blog-cctv-cable-vs-normal-cable.html">CCTV Cable vs Normal Cable</a></li>
+        <li><a href="/blog-cctv-for-factories-warehouses.html">CCTV for Factories & Warehouses</a></li>
+        <li><a href="/blog-industrial-lan-house-wire-cables.html">Industrial, LAN & House Wires</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/contact.html">Contact</a></li>
+
+  </ul>
+</nav>
+
+<div class="header-cta">
+  <a href="#contact" class="btn">Raise Inquiry</a>
+</div>
+
+ 
+        <!-- MOBILE MENU ICON -->
+        <div class="menu-toggle" id="menutoggle">&#9776;</div>
+
+    </div> 
+
 </header>
+<script>
+document.addEventListener("click", function (e) {
 
+  // Close all dropdowns
+  document.querySelectorAll(".dropdown.open").forEach(d => {
+    d.classList.remove("open");
+  });
+
+  // Check if clicked element is a dropdown toggle
+  const toggle = e.target.closest(".dropdown > a, .dropdown > span");
+
+  if (toggle) {
+    e.preventDefault();
+    const parent = toggle.parentElement;
+    parent.classList.toggle("open");
+  }
+});
+</script>
 
 
 </body>

@@ -27,11 +27,11 @@ if (!localStorage.getItem("arkaUser")) {
 }
 </script>
 
-<iframe id="appFrame" src="grocery.html"></iframe>
+<iframe id="appFrame" src="electronics.html"></iframe>
 
 
 <script>
-let page = localStorage.getItem("appPage") || "grocery.html";
+let page = localStorage.getItem("appPage") || "electronics.html";
 document.getElementById("appFrame").src = page;
 
 window.addEventListener("message", function(e){

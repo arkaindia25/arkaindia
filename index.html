@@ -3,9 +3,6 @@
 <head> 
     
     <meta name="google-site-verification" content="DcmUi0bUGy6HQJfb0gBXRRwBgng153UuQXSM9zimAFQ" />
-
-    
-
  <script type="application/ld+json">
 {
           "@context": "https://schema.org",
@@ -335,7 +332,7 @@
 <!-- ===== HEADER ===== -->
 <div id="header"></div>
 <script>
-fetch("header.html?ver=" + Date.now())
+fetch("/header.html?ver=" + Date.now())
   .then(res => res.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
@@ -615,8 +612,6 @@ electronics, security systems, jewellery, and apparel to customers across India.
         <li><a href="#products">Products</a></li>
         <li><a href="#industries">Industries</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="/999-offer.html">999-offer (Website Services) 
-                                       2999-offer (Website Services)</a></li>
       </ul>
     </div>
 
@@ -699,78 +694,5 @@ electronics, security systems, jewellery, and apparel to customers across India.
 <a href="https://wa.me/917292060278?text=Hello%20Arka%20India,%20I%20am%20looking%20for%20bulk%20CCTV%20and%20security%20cables.%20Please%20share%20details." class="whatsapp-btn">WhatsApp</a>
   <a href="tel:+91729260278" class="call-btn">Call</a>
 </div>
-<script>
-function getCart() {
-  return JSON.parse(localStorage.getItem("cart")) || [];
-}
-
-function setCart(cart) {
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
-
-function updateCartCount() {
-  const cart = getCart();
-  let totalQty = 0;
-
-  cart.forEach(item => {
-    totalQty += item.qty;
-  });
-
-  const badge = document.querySelector(".cart-count");
-  if (badge) badge.textContent = totalQty;
-}
-
-updateCartCount();
-</script>
-
-
-<script>
-window.addEventListener("message", function(e){
-    if(e.data.startsWith("page:")){
-        const page = e.data.replace("page:","");
-        history.pushState({}, "", "?page=" + page);
-        loadPage(page);
-    }
-});
-
-function loadPage(page){
-    const container = document.getElementById("content");
-
-    if(page === "cart"){
-        container.innerHTML = document.getElementById("cart-section").innerHTML;
-    }
-    else if(page === "grocery"){
-        container.innerHTML = document.getElementById("grocery-section").innerHTML;
-    }
-    else if(page === "spices"){
-        container.innerHTML = document.getElementById("spices-section").innerHTML;
-    }
-    else{
-        container.innerHTML = document.getElementById("home-section").innerHTML;
-    }
-}
-
-const urlPage = new URLSearchParams(location.search).get("page");
-loadPage(urlPage || "home");
-</script>
-
-<div id="content"></div>
-
-<div id="home-section" style="display:none">
-    <!-- paste your current homepage html here -->
-</div>
-
-<div id="grocery-section" style="display:none">
-    <!-- paste grocery page content here -->
-</div>
-
-<div id="cart-section" style="display:none">
-    <!-- paste cart content here -->
-</div>
-
-<div id="spices-section" style="display:none">
-    <!-- paste spices content here -->
-</div>
-
 </body>
 </html>
