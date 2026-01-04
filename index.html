@@ -337,7 +337,7 @@ gtag('config', 'G-C832X6GSLC');
 <!-- ===== HEADER ===== -->
 <div id="header"></div>
 <script>
-fetch("/header.html?ver=" + Date.now())
+fetch("header.html?ver=" + Date.now())
 .then(res => res.text())
 .then(data => {
 document.getElementById("header").innerHTML = data;
@@ -702,11 +702,11 @@ alert("Something went wrong. Please try again.");
 </div>
 <script>
 function getCart() {
-  return JSON.parse(localStorage.getItem("cart")) || [];
+  return JSON.parse(localStorage.getItem("arkaCart")) || [];
 }
 
 function setCart(cart) {
-  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("arkaCart", JSON.stringify(cart));
 }
 
 function updateCartCount() {
